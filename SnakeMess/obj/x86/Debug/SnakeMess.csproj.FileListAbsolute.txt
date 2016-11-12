@@ -1,0 +1,10 @@
+C:\_MyStuff_\Westerdals Oslo ACT\PG3300_SoftwareDesign\Innlevering_Eksamen\Innlevering\Oppgaven\PG3300_Innlevering_Kode\SnakeMess\bin\Debug\SnakeMess.exe
+C:\_MyStuff_\Westerdals Oslo ACT\PG3300_SoftwareDesign\Innlevering_Eksamen\Innlevering\Oppgaven\PG3300_Innlevering_Kode\SnakeMess\bin\Debug\SnakeMess.pdb
+C:\_MyStuff_\Westerdals Oslo ACT\PG3300_SoftwareDesign\Innlevering_Eksamen\Innlevering\Oppgaven\PG3300_Innlevering_Kode\SnakeMess\obj\x86\Debug\SnakeMess.csprojResolveAssemblyReference.cache
+C:\_MyStuff_\Westerdals Oslo ACT\PG3300_SoftwareDesign\Innlevering_Eksamen\Innlevering\Oppgaven\PG3300_Innlevering_Kode\SnakeMess\obj\x86\Debug\SnakeMess.exe
+C:\_MyStuff_\Westerdals Oslo ACT\PG3300_SoftwareDesign\Innlevering_Eksamen\Innlevering\Oppgaven\PG3300_Innlevering_Kode\SnakeMess\obj\x86\Debug\SnakeMess.pdb
+D:\Git\PG3300\SnakeMess\obj\x86\Debug\SnakeMess.exe
+D:\Git\PG3300\SnakeMess\obj\x86\Debug\SnakeMess.pdb
+D:\Git\PG3300\SnakeMess\bin\Debug\SnakeMess.exe
+D:\Git\PG3300\SnakeMess\bin\Debug\SnakeMess.pdb
+D:\Git\PG3300\SnakeMess\obj\x86\Debug\SnakeMess.csprojResolveAssemblyReference.cache
