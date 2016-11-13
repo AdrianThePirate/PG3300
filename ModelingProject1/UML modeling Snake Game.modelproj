@@ -7,7 +7,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{6c502227-1a22-495a-aee0-8573cb72ceda}</ProjectGuid>
     <ArchitectureToolsVersion>2.0.0.0</ArchitectureToolsVersion>
-    <Name>ULM modeling Snake Game</Name>
+    <Name>UML modeling Snake Game</Name>
     <RootNamespace>ModelingProject1</RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -30,7 +30,7 @@
       <DependentUpon>Snake Game Class diagram.classdiagram</DependentUpon>
     </Content>
     <Folder Include="ModelDefinition\" />
-    <Content Include="ModelDefinition\ULM modeling Snake Game.uml">
+    <Content Include="ModelDefinition\UML modeling Snake Game.uml">
       <SubType>Content</SubType>
     </Content>
   </ItemGroup>

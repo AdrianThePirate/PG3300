@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnakeMess", "SnakeMess\SnakeMess.csproj", "{C0F28035-E721-4FC1-A03B-624ED20292C3}"
 EndProject
-Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "ULM modeling Snake Game", "ModelingProject1\ULM modeling Snake Game.modelproj", "{6C502227-1A22-495A-AEE0-8573CB72CEDA}"
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "UML modeling Snake Game", "ModelingProject1\UML modeling Snake Game.modelproj", "{6C502227-1A22-495A-AEE0-8573CB72CEDA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
