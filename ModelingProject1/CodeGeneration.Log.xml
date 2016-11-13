@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="file:///C:/PROGRAM FILES (X86)/MICROSOFT VISUAL STUDIO 14.0/COMMON7/IDE/EXTENSIONS/MICROSOFT/ARCHITECTURE TOOLS/EXTENSIBILITY/Logging/CodeGenLog.xslt"?>
+<Log xmlns="http://schemas.microsoft.com/VisualStudio/2010/CodeGen.RE.Log" Label="Code Generation/Text Transformation Log">
+  <MessageClass Name="Message" Label="Message" Option="Show informational messages" />
+  <MessageClass Name="Warning" Label="Warning" Option="Show warnings" />
+  <MessageClass Name="Error" Label="Error" Option="Show errors" />
+  <MessageClass Name="Property" Label="Property" Option="Show metadata" />
+  <MessageClass Name="Diagnostic" Label="Message" Option="Show diagnostic messages" />
+  <Message Timestamp="2016-11-13T16:10:47" Importance="High" Text="Code generation or text transformation started." />
+  <Message Timestamp="2016-11-13T16:10:47" Importance="Diagnostic" Text="Name = ClassTemplate" />
+  <Message Timestamp="2016-11-13T16:10:47" Importance="Diagnostic" Text="Overwrite = True" />
+  <Message Timestamp="2016-11-13T16:10:47" Importance="Diagnostic" Text="ProjectPath = ..\ModelingProject1Lib\ModelingProject1Lib.csproj" />
+  <Message Timestamp="2016-11-13T16:10:47" Importance="Diagnostic" Text="TargetDirectory = GeneratedCode\{PackageStructure}" />
+  <Message Timestamp="2016-11-13T16:10:47" Importance="Diagnostic" Text="TargetName = {Name}" />
+  <Message Timestamp="2016-11-13T16:10:47" Importance="Diagnostic" Text="TemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4" />
+  <Message Timestamp="2016-11-13T16:10:47" Importance="Diagnostic" Text="ResolvedTemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4" />
+  <Message Timestamp="2016-11-13T16:10:47" Importance="Medium" Text="ModelingProject1's Text Template Binding: 'ClassTemplate' will apply ClassTemplate.t4 to: 'ModelingProject1::Snake Game' -  (Class), 'ModelingProject1::Snake' -  (Class), 'ModelingProject1::InputHandler' -  (Class), 'ModelingProject1::Action' -  (Class), 'ModelingProject1::Food' -  (Class), 'ModelingProject1::GameState' -  (Class), 'ModelingProject1::GUI' -  (Class) " />
+  <Message Timestamp="2016-11-13T16:11:02" Importance="Medium" Text="Project Added: D:\Git\PG3300\ModelingProject1Lib\ModelingProject1Lib.csproj" />
+  <Message Timestamp="2016-11-13T16:11:02" Importance="Medium" Text="'ModelingProject1::Snake Game' -  (Class) : success (file created) - D:\Git\PG3300\ModelingProject1Lib\GeneratedCode\Snake Game.cs" />
+  <Message Timestamp="2016-11-13T16:11:03" Importance="Medium" Text="'ModelingProject1::Snake' -  (Class) : success (file created) - D:\Git\PG3300\ModelingProject1Lib\GeneratedCode\Snake.cs" />
+  <Message Timestamp="2016-11-13T16:11:04" Importance="Medium" Text="'ModelingProject1::InputHandler' -  (Class) : success (file created) - D:\Git\PG3300\ModelingProject1Lib\GeneratedCode\InputHandler.cs" />
+  <Message Timestamp="2016-11-13T16:11:05" Importance="Medium" Text="'ModelingProject1::Action' -  (Class) : success (file created) - D:\Git\PG3300\ModelingProject1Lib\GeneratedCode\Action.cs" />
+  <Message Timestamp="2016-11-13T16:11:05" Importance="High" Text="Code generation process has been canceled." />
+  <Message Timestamp="2016-11-13T16:11:05" Importance="Diagnostic" Text="The selection included 21 elements which were not bound to a template." />
+  <Message Timestamp="2016-11-13T16:11:05" Importance="Diagnostic" Text="'ModelingProject1::' -  (Association): no bound template." />
+  <Message Timestamp="2016-11-13T16:11:05" Importance="Diagnostic" Text="'ModelingProject1::' -  (Association): no bound template." />
+  <Message Timestamp="2016-11-13T16:11:05" Importance="Diagnostic" Text="'ModelingProject1::' -  (Association): no bound template." />
+  <Message Timestamp="2016-11-13T16:11:05" Importance="Diagnostic" Text="'ModelingProject1::' -  (Association): no bound template." />
+  <Message Timestamp="2016-11-13T16:11:05" Importance="Diagnostic" Text="'ModelingProject1::' -  (Association): no bound template." />
+  <Message Timestamp="2016-11-13T16:11:05" Importance="Diagnostic" Text="'ModelingProject1::' -  (Association): no bound template." />
+  <Message Timestamp="2016-11-13T16:11:05" Importance="Diagnostic" Text="'ModelingProject1::' -  (Association): no bound template." />
+  <Message Timestamp="2016-11-13T16:11:05" Importance="Diagnostic" Text="'ModelingProject1::' -  (Association): no bound template." />
+  <Message Timestamp="2016-11-13T16:11:05" Importance="Diagnostic" Text="'ModelingProject1::' -  (Association): no bound template." />
+  <Message Timestamp="2016-11-13T16:11:05" Importance="Diagnostic" Text="'ModelingProject1::' -  (Association): no bound template." />
+  <Warning Timestamp="2016-11-13T16:11:05" Importance="Medium" Text="'ModelingProject1::Food' -  (Class): no bound template." />
+  <Message Timestamp="2016-11-13T16:11:05" Importance="Diagnostic" Text="'ModelingProject1::' -  (Association): no bound template." />
+  <Message Timestamp="2016-11-13T16:11:05" Importance="Diagnostic" Text="'ModelingProject1::' -  (Association): no bound template." />
+  <Warning Timestamp="2016-11-13T16:11:05" Importance="Medium" Text="'ModelingProject1::GameState' -  (Class): no bound template." />
+  <Message Timestamp="2016-11-13T16:11:05" Importance="Diagnostic" Text="'ModelingProject1::' -  (Association): no bound template." />
+  <Message Timestamp="2016-11-13T16:11:05" Importance="Diagnostic" Text="'ModelingProject1::' -  (Association): no bound template." />
+  <Message Timestamp="2016-11-13T16:11:05" Importance="Diagnostic" Text="'ModelingProject1::' -  (Association): no bound template." />
+  <Message Timestamp="2016-11-13T16:11:05" Importance="Diagnostic" Text="'ModelingProject1::' -  (Association): no bound template." />
+  <Warning Timestamp="2016-11-13T16:11:05" Importance="Medium" Text="'ModelingProject1::GUI' -  (Class): no bound template." />
+  <Message Timestamp="2016-11-13T16:11:05" Importance="Diagnostic" Text="'ModelingProject1::' -  (Association): no bound template." />
+  <Message Timestamp="2016-11-13T16:11:05" Importance="Diagnostic" Text="'ModelingProject1::' -  (Association): no bound template." />
+  <Message Timestamp="2016-11-13T16:11:05" Importance="High" Text="Code generation complete. Errors: 0. Warnings: 3." />
+</Log>
