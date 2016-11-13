@@ -2785,45 +2785,6 @@
             </relationshipOwnedElementsInternal>
           </association>
           <association
-            Id="3d90a501-a3cf-4f78-a769-187f7168557d"
-            isDerived="false"
-            sourceEndRoleName="Action"
-            targetEndRoleName="Factory"
-            isLeaf="false"
-            isAbstract="false">
-            <classMoniker
-              Id="c345a890-58d0-49a2-a0ad-567622ca20e5"
-              LastKnownName="Factory"
-              LastKnownLocation="UML modeling Snake Game.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="1059a81b-243d-48ba-a84e-a506baf7dfdd"
-                  name="Action"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="867ec8d2-ac21-49d6-bdd9-2b02936bae3a"
-                  name="Factory"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-          <association
             Id="028d9009-5301-415c-aed7-507828fa8ad1"
             isDerived="false"
             sourceEndRoleName="Action"
