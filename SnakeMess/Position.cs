@@ -6,18 +6,18 @@ using System.Text;
 namespace Snake {
 	class Position {
 		//Defin cordinastion
-		public int XCord, YCord;
+		public int xCord, yCord;
 		
 		//Constructer of point (poistion)
 		public Position(int x = 0,int y = 0) {
-			XCord = x;
-			YCord = y;
+			xCord = x;
+			yCord = y;
 		}
 
 		//Constructer of point by point
 		public Position(Position input) {
-			XCord = input.XCord;
-			YCord = input.YCord;
+			xCord = input.xCord;
+			yCord = input.yCord;
 		}
 	}
 }

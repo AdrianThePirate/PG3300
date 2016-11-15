@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Factory.cs" />
     <Compile Include="Position.cs" />
     <Compile Include="Snake.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
