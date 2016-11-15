@@ -13,27 +13,10 @@ using System.Diagnostics;
 //
 //          -Tomas
 //
-namespace Snake
-{
-	// Class point, keeps two posistion values.
-	class Point
-	{
-		//Does nothing...
-		public const string Ok = "Ok";
-
-		//Defin values
-		public int X; public int Y;
-		
-		//Constructer of point (poistion)
-		public Point(int x = 0, int y = 0) { X = x; Y = y; }
-
-		//Constructer of point by point
-		public Point(Point input) { X = input.X; Y = input.Y; }
-	}
+namespace Snake{
 
 	//Main Class
-	class Snake
-	{
+	class Snake{
 		//Main
 		public static void Main(string[] arguments)
 		{
@@ -43,10 +26,10 @@ namespace Snake
 			short last = newDir;
 			int boardW = Console.WindowWidth, boardH = Console.WindowHeight;
 			Random rng = new Random();
-			Point app = new Point();
+			Position app = new Position();
 			//Creats list of point (posistions)
-			List<Point> snake = new List<Point>();
-			snake.Add(new Point(10, 10)); snake.Add(new Point(10, 10)); snake.Add(new Point(10, 10)); snake.Add(new Point(10, 10)); //add to list Snake
+			List<Position> snake = new List<Position>();
+			snake.Add(new Position(10, 10)); snake.Add(new Position(10, 10)); snake.Add(new Position(10, 10)); snake.Add(new Position(10, 10)); //add to list Snake
 			//GUI fuck
 			Console.CursorVisible = false;
 			Console.Title = "Westerdals Oslo ACT - SNAKE";
@@ -57,7 +40,7 @@ namespace Snake
 				app.X = rng.Next(0, boardW); app.Y = rng.Next(0, boardH);
 				bool spot = true;
 				//Test if food loc is not loced on snake
-				foreach (Point i in snake)
+				foreach (Position i in snake)
 					if (i.X == app.X && i.Y == app.Y) {
 						spot = false;
 						break;
@@ -103,9 +86,9 @@ namespace Snake
 					// Restes stopwatch
 					t.Restart();
 					//Creates objects of point (posistion) basde in snakes posstiosn
-					Point tail = new Point(snake.First());
-					Point head = new Point(snake.Last());
-					Point newH = new Point(head);
+					Position tail = new Position(snake.First());
+					Position head = new Position(snake.Last());
+					Position newH = new Position(head);
 
 					//Cheack direction and moves newH accordingly. Directions values 0 = up, 1 = right, 2 = down, 3 = left
 					switch(newDir) {
@@ -139,7 +122,7 @@ namespace Snake
 								app.X = rng.Next(0, boardW); app.Y = rng.Next(0, boardH);
 								bool found = true;
 								//Tests if food is on snake
-								foreach (Point i in snake)
+								foreach (Position i in snake)
 									if (i.X == app.X && i.Y == app.Y) {
 										found = false;
 										break;
@@ -157,7 +140,7 @@ namespace Snake
 					if (!inUse) {
 						//Removes the back of the snek
 						snake.RemoveAt(0);
-						foreach (Point x in snake)
+						foreach (Position x in snake)
 							if (x.X == newH.X && x.Y == newH.Y) {
 								// Death by accidental self-cannibalism.
 								gg = true;
