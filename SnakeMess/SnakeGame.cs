@@ -27,7 +27,7 @@ namespace Snake{
 			Random rng = new Random();
 			Position app = Factory.CreatePosition();
 			//Creats list of point (posistions)
-			List<Position> snake = Factory.CreateSnake;
+			Snake snake = Factory.CreateSnake;
 			//GUI fuck
 			Console.CursorVisible = false;
 			Console.Title = "Westerdals Oslo ACT - SNAKE";
