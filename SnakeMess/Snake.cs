@@ -85,9 +85,9 @@ namespace Snake{
 					// Restes stopwatch
 					t.Restart();
 					//Creates objects of point (posistion) basde in snakes posstiosn
-					Position tail = Factory.CreatePosition(pos: snake.First());
-					Position head = Factory.CreatePosition(pos: snake.Last());
-					Position newH = Factory.CreatePosition(pos: head);
+					Position tail = Factory.CreatePosition(location: snake.First());
+					Position head = Factory.CreatePosition(location: snake.Last());
+					Position newH = Factory.CreatePosition(location: head);
 
 					//Cheack direction and moves newH accordingly. Directions values 0 = up, 1 = right, 2 = down, 3 = left
 					switch(newDir) {

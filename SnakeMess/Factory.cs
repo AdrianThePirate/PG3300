@@ -8,9 +8,9 @@ namespace Snake {
 
 		private static Position position;
 
-		public static Position CreatePosition(int xCord = 0, int yCord = 0, Position pos = null) {
-			if(pos != null) {
-				position = new Position(pos);
+		public static Position CreatePosition(int xCord = 0, int yCord = 0, Position location = null) {
+			if(location != null) {
+				position = new Position(location);
 			} else {
 				position = new Position(xCord,yCord);
 			}

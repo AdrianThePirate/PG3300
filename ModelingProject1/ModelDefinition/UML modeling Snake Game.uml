@@ -1313,7 +1313,7 @@
             isAbstract="false">
             <classMoniker
               Id="166797e3-8e60-4030-aa4c-d78196c847c2"
-              LastKnownName="Possistion"
+              LastKnownName="Position"
               LastKnownLocation="UML modeling Snake Game.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -2103,7 +2103,7 @@
     <packageHasNamedElement>
       <class
         Id="166797e3-8e60-4030-aa4c-d78196c847c2"
-        name="Possistion"
+        name="Position"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">

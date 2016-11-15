@@ -72,20 +72,6 @@
       </propertyInstances>
     </stereotypeInstance>
   </appliedStereotypesInternal>
-  <profileInstances>
-    <packageHasProfileInstances Id="ea908f56-912d-45b7-aca3-d09c0639266f">
-      <profileInstance Id="6d4c9c66-9947-4db3-a4d3-f2e2b3b747be" name="CSharpProfile">
-        <elementDefinition Id="f56b9108-def2-454e-8a05-297f39872b2f" />
-      </profileInstance>
-      <elementDefinition Id="b3235033-9511-4c2f-856a-8da2ae4cb802" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="3e90d02a-ce52-412e-90d8-4975c93c4129">
-      <profileInstance Id="d6dca48c-a509-4da9-912b-6769d93d670e" name="TextTemplateBindings">
-        <elementDefinition Id="14d2d1a1-2ea8-4c98-b4ce-b863d62e98fe" />
-      </profileInstance>
-      <elementDefinition Id="7043e836-e738-44e9-82ce-4d4493660efc" />
-    </packageHasProfileInstances>
-  </profileInstances>
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
       <class Id="c713726b-b8bf-4322-944d-e792b562d67a" name="Snake Game" isAbstract="false" isLeaf="false" isActiveClass="false">
@@ -406,7 +392,7 @@
         <elementDefinition Id="c345a890-58d0-49a2-a0ad-567622ca20e5" />
         <targetEnds>
           <association Id="db254cb4-2f20-4e18-9f88-cd87b9e2b4bd" isDerived="false" sourceEndRoleName="Factory" targetEndRoleName="Possistion" isLeaf="false" isAbstract="false">
-            <classMoniker Id="11256ac9-dab1-4c62-afd2-debf3bb730f2" LastKnownName="Possistion" />
+            <classMoniker Id="11256ac9-dab1-4c62-afd2-debf3bb730f2" LastKnownName="Position" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd Id="46bf9486-df1c-4c32-a835-6a03f7b7f1a1" name="Factory" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
@@ -898,7 +884,7 @@
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
-      <class Id="11256ac9-dab1-4c62-afd2-debf3bb730f2" name="Possistion" isAbstract="false" isLeaf="false" isActiveClass="false">
+      <class Id="11256ac9-dab1-4c62-afd2-debf3bb730f2" name="Position" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="166797e3-8e60-4030-aa4c-d78196c847c2" />
         <ownedAttributesInternal>
           <property Id="fc3b5c4e-c5d3-410f-98bb-b3d0b5a6128d" name="Int x-axes" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -2023,6 +2009,18 @@
           <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
         </profileInstance>
         <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="ea908f56-912d-45b7-aca3-d09c0639266f">
+        <profileInstance Id="6d4c9c66-9947-4db3-a4d3-f2e2b3b747be" name="CSharpProfile">
+          <elementDefinition Id="f56b9108-def2-454e-8a05-297f39872b2f" />
+        </profileInstance>
+        <elementDefinition Id="b3235033-9511-4c2f-856a-8da2ae4cb802" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="3e90d02a-ce52-412e-90d8-4975c93c4129">
+        <profileInstance Id="d6dca48c-a509-4da9-912b-6769d93d670e" name="TextTemplateBindings">
+          <elementDefinition Id="14d2d1a1-2ea8-4c98-b4ce-b863d62e98fe" />
+        </profileInstance>
+        <elementDefinition Id="7043e836-e738-44e9-82ce-4d4493660efc" />
       </packageHasProfileInstances>
     </profileInstances>
   </package>
