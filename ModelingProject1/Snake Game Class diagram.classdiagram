@@ -1926,18 +1926,6 @@
           </operation>
           <operation Id="a128c395-e18e-446d-b469-1a138c5617be" name="GameState" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="d6fac168-5d12-4956-a746-c8da36991a74" />
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="82d5af97-4b03-4ca0-a1b2-31dd6a0efa6b" name="bool alive" direction="In" isUnique="false">
-                  <elementDefinition Id="0f24c074-fdcb-4989-bfb8-d3ea724b1e6e" />
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="1c9c533e-1082-4e8a-b4e0-98c38a3da349" name="bool pause(" direction="In" isUnique="false">
-                  <elementDefinition Id="93d266b6-2d23-4bb1-a488-dae917cf222a" />
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
           </operation>
         </ownedOperationsInternal>
       </class>
