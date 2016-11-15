@@ -7,6 +7,7 @@ namespace Snake {
 	class Factory {
 
 		private static Position position;
+		private static Snake snake;
 
 		public static Position CreatePosition(int xCord = 0, int yCord = 0, Position location = null) {
 			if(location != null) {
@@ -15,6 +16,10 @@ namespace Snake {
 				position = new Position(xCord,yCord);
 			}
 			return position;	
+		}
+
+		public static Snake CreateSnake() {
+			return snake = new Snake();
 		}
 	}
 }
