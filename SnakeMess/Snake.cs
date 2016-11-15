@@ -8,14 +8,45 @@ namespace Snake {
 		private List<Position> snake;
 
 		public Snake() {
-			List<Position> snake = new List<Position>();
-			for(int i = 0; i > 4; i++) {
+			snake = new List<Position>();
+			for(int i = 0; i < 4; i++) {
 				snake.Add(Factory.CreatePosition(10,10));
 			}
 		}
 
-		public CollisionCheck(int xCord, int yCord) {
-
+		public Position First() {
+			Position pos = snake.First();
+			return pos;
 		}
+
+		public Position Last() {
+			return snake.Last();
+		}
+
+		public int Size() {
+			int size = snake.Count;
+			return size;
+		}
+
+		public void Add(Position pos = null) {
+			snake.Add(pos);
+		}
+
+		public void RemoveEnd() {
+			snake.RemoveAt(0);
+		}
+
+		public bool CollisionCheck(int xCord, int yCord) {
+			bool result = false;
+			foreach(Position location in snake) {
+				if(location.xCord == xCord && location.yCord == yCord) {
+					result = true;
+					break;
+				}
+			}
+			return result;
+		}
+
+		
 	}
 }

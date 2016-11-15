@@ -27,7 +27,7 @@ namespace Snake{
 			Random rng = new Random();
 			Position app = Factory.CreatePosition();
 			//Creats list of point (posistions)
-			Snake snake = Factory.CreateSnake;
+			Snake snake = Factory.CreateSnake();
 			//GUI fuck
 			Console.CursorVisible = false;
 			Console.Title = "Westerdals Oslo ACT - SNAKE";
@@ -36,15 +36,10 @@ namespace Snake{
 			//Creates food
 			while (true) {
 				app.xCord = rng.Next(0, boardW); app.yCord = rng.Next(0, boardH);
-				bool spot = true;
-				//Test if food loc is not loced on snake
-				foreach (Position i in snake)
-					if (i.yCord == app.xCord && i.yCord == app.yCord) {
-						spot = false;
-						break;
-					}
+				bool spot = snake.CollisionCheck(app.xCord,app.yCord);
+
 				//Prints food, if not loced on snake
-				if (spot) {
+				if (!spot) {
 					Console.ForegroundColor = ConsoleColor.Green; Console.SetCursorPosition(app.xCord, app.yCord); Console.Write("$");
 					break;
 				}
@@ -106,27 +101,21 @@ namespace Snake{
 					//Cheack if newH is located outside the game area
 					if (newH.yCord < 0 || newH.xCord >= boardW)
 						gg = true;
-					else if (newH.yCord < 0 || newH.yCord >= boardH)
+					else if (newH.xCord < 0 || newH.yCord >= boardH)
 						gg = true;
 					//Test is newH is on the food
 					if (newH.xCord == app.xCord && newH.yCord == app.yCord) {
 						//Cheacks if there is room for food
-						if (snake.Count + 1 >= boardW * boardH)
+						if (snake.Size() + 1 >= boardW * boardH)
 							// No more room to place apples - game over.
 							gg = true;
 						else {
 							//Creates new food
 							while (true) {
 								app.xCord = rng.Next(0, boardW); app.yCord = rng.Next(0, boardH);
-								bool found = true;
-								//Tests if food is on snake
-								foreach (Position i in snake)
-									if (i.xCord == app.xCord && i.yCord == app.yCord) {
-										found = false;
-										break;
-									}
+								bool found = snake.CollisionCheck(app.xCord, app.yCord);
 								//If new food is added stets inUse = true and breks teh creat food
-								if (found) {
+								if (!found) {
 									inUse = true;
 									break;
 								}
@@ -137,13 +126,8 @@ namespace Snake{
 					//If new food is not added tests if self-cannibalism.
 					if (!inUse) {
 						//Removes the back of the snek
-						snake.RemoveAt(0);
-						foreach (Position x in snake)
-							if (x.xCord == newH.xCord && x.yCord == newH.yCord) {
-								// Death by accidental self-cannibalism.
-								gg = true;
-								break;
-							}
+						snake.RemoveEnd();
+						gg = snake.CollisionCheck(newH.xCord, newH.yCord);
 					}
 
 					//Updated GUI

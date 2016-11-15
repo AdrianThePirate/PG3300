@@ -19,7 +19,8 @@ namespace Snake {
 		}
 
 		public static Snake CreateSnake() {
-			return snake = new Snake();
+			snake = new Snake();
+			return snake;
 		}
 	}
 }

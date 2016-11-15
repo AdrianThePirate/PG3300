@@ -896,6 +896,12 @@
             </appliedStereotypesInternal>
             <elementDefinition Id="0ac62d62-f41a-47f0-ae24-3de7797cfd96" />
           </operation>
+          <operation Id="4134fa98-f3f9-46bf-84da-0a0bfe0bad6d" name="Last" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="db82273c-d0d4-48cc-a638-5009ea8ef3ab" />
+          </operation>
+          <operation Id="e8ae64b6-ae79-445c-9154-7f9f716cb29c" name="First" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f402d542-f684-40a4-8ffa-c765959c80aa" />
+          </operation>
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
