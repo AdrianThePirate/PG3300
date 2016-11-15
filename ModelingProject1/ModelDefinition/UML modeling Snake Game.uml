@@ -1538,6 +1538,45 @@
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
+          <association
+            Id="94355c24-e50d-4823-abcc-505e58b05884"
+            isDerived="false"
+            sourceEndRoleName="Factory"
+            targetEndRoleName="InputHandler"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="bd106c4d-6b4f-4b2c-b5d5-2488f89b11b0"
+              LastKnownName="InputHandler"
+              LastKnownLocation="UML modeling Snake Game.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="20a13d6b-937d-4dda-8abd-cb92a6ef4a2a"
+                  name="Factory"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="4cf06e3d-9d7b-4092-854f-3715c6a1f564"
+                  name="InputHandler"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
         </targetEnds>
         <ownedOperationsInternal>
           <operation

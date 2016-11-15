@@ -487,6 +487,22 @@
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="5fa1f8cd-cfb4-4583-9f4b-39fb2c5ae0b2" />
           </association>
+          <association Id="b4bb8fc7-31bb-4408-802b-58bbe7dd8666" isDerived="false" sourceEndRoleName="Factory" targetEndRoleName="InputHandler" isLeaf="false" isAbstract="false">
+            <classMoniker Id="181b4786-ad93-48ef-aa1c-87f2878347fb" LastKnownName="InputHandler" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="aff74c6f-ab13-4cfe-8830-680dd19e54cc" name="Factory" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="20a13d6b-937d-4dda-8abd-cb92a6ef4a2a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="83454469-ced2-4a36-ac76-d844c0246d61" name="InputHandler" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="4cf06e3d-9d7b-4092-854f-3715c6a1f564" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="94355c24-e50d-4823-abcc-505e58b05884" />
+          </association>
         </targetEnds>
         <ownedOperationsInternal>
           <operation Id="3ebbf796-2138-436e-9c6b-d3532f856813" name="CreatStopwatch" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
