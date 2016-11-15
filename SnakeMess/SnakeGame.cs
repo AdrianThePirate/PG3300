@@ -127,7 +127,9 @@ namespace Snake{
 					if (!inUse) {
 						//Removes the back of the snek
 						snake.RemoveEnd();
-						gg = snake.CollisionCheck(newH.xCord, newH.yCord);
+						if(snake.CollisionCheck(newH.xCord, newH.yCord)) {
+							gg = true;
+						}
 					}
 
 					//Updated GUI
