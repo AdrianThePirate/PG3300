@@ -13,7 +13,7 @@ using System.Diagnostics;
 //
 //          -Tomas
 //
-namespace SnakeMess
+namespace Snake
 {
 	// Class point, keeps two posistion values.
 	class Point
@@ -32,7 +32,7 @@ namespace SnakeMess
 	}
 
 	//Main Class
-	class SnakeMess
+	class Snake
 	{
 		//Main
 		public static void Main(string[] arguments)
