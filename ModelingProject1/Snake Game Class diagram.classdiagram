@@ -1868,6 +1868,24 @@
     <logicalClassDesignerModelHasTypes>
       <class Id="066dac0c-614a-47df-a1e9-81a8a8558b7b" name="Food" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="6fa93df2-7ed1-41a2-be6f-5ef84ef332dc" />
+        <targetEnds>
+          <association Id="2dc6caf0-584e-4122-b4ca-de3d82a34367" isDerived="false" sourceEndRoleName="Food" targetEndRoleName="Factory" isLeaf="false" isAbstract="false">
+            <classMoniker Id="bceb3723-54be-4674-8489-32c6ab556226" LastKnownName="Factory" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="953d4700-48c3-422b-8fe5-4745d231c832" name="Food" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="074baca6-332f-47f1-9d89-ce6a97ab80d5" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="4ea8cc9b-248f-423e-a451-7fe86cfef09a" name="Factory" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="b86af0dd-ddca-4bf5-b2f4-01e0c2a30ff2" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="b04b7cac-b9d3-448f-9e7f-67b3855e8ea2" />
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property Id="1cdb3454-3408-464d-9791-785eb27203e9" name="Possistion Location" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="463e2695-8ffd-4568-a9b4-3d3811e9511f" />

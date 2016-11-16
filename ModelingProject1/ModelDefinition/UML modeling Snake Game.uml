@@ -3544,6 +3544,47 @@
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="b04b7cac-b9d3-448f-9e7f-67b3855e8ea2"
+            isDerived="false"
+            sourceEndRoleName="Food"
+            targetEndRoleName="Factory"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="c345a890-58d0-49a2-a0ad-567622ca20e5"
+              LastKnownName="Factory"
+              LastKnownLocation="UML modeling Snake Game.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="074baca6-332f-47f1-9d89-ce6a97ab80d5"
+                  name="Food"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="b86af0dd-ddca-4bf5-b2f4-01e0c2a30ff2"
+                  name="Factory"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property
             Id="463e2695-8ffd-4568-a9b4-3d3811e9511f"
