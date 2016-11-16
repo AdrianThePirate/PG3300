@@ -27,20 +27,20 @@
         isActiveClass="false">
         <targetEnds>
           <association
-            Id="a194e444-5a35-42d0-a5d7-eef9812605a1"
+            Id="d3b31f28-39cd-4cc6-a401-b746e83e2620"
             isDerived="false"
             sourceEndRoleName="Client"
-            targetEndRoleName="CookieBakery"
+            targetEndRoleName="Factory"
             isLeaf="false"
             isAbstract="false">
             <classMoniker
-              Id="21a45882-4f18-4b82-8630-88c6756051f9"
-              LastKnownName="CookieBakery"
+              Id="280dc6c8-dd28-4d2f-84d8-4c354efc09ae"
+              LastKnownName="Factory"
               LastKnownLocation="ModelingProject2.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="1605c2eb-4470-4f27-930f-d7f8deb9375f"
+                  Id="5d04ec66-aa5a-44d9-9974-dca28dce0668"
                   name="Client"
                   isLeaf="false"
                   isStatic="false"
@@ -53,8 +53,8 @@
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="6f2d6d2d-1bae-4209-93d3-f6567ece5aab"
-                  name="CookieBakery"
+                  Id="9799f673-8bac-4b9c-8f73-e44785c5d837"
+                  name="Factory"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -66,6 +66,24 @@
             </relationshipOwnedElementsInternal>
           </association>
         </targetEnds>
+        <ownedOperationsInternal>
+          <operation
+            Id="e02f934c-a61a-41d7-91d6-dabe1de99cf0"
+            name="CreateBakery"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="a21600a7-8911-4118-8191-e1396ba7b814"
+            name="CreatePerson"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -75,60 +93,6 @@
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
-        <targetEnds>
-          <association
-            Id="60b84326-59a7-41a3-9ddf-030aa7343b1d"
-            isDerived="false"
-            sourceEndRoleName="Person"
-            targetEndRoleName="Client"
-            isLeaf="false"
-            isAbstract="false">
-            <classMoniker
-              Id="fc1a2e75-eb26-4ba8-a474-6e1e8d8f1c13"
-              LastKnownName="Client"
-              LastKnownLocation="ModelingProject2.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="21c044a6-bded-4295-b072-63cae0bc7e44"
-                  name="Person"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false">
-                  <lowerValueInternal>
-                    <literalString
-                      Id="0d16f3a8-d11e-453a-bcea-3621a3530e21"
-                      name="Lower"
-                      value="3" />
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString
-                      Id="e529888c-f156-4abc-9525-49968d3c18e6"
-                      name="Upper"
-                      value="3" />
-                  </upperValueInternal>
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="fb47bc7f-4575-4924-8090-b4d0c05b3acd"
-                  name="Client"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-        </targetEnds>
         <ownedOperationsInternal>
           <operation
             Id="c9b97864-3640-42eb-8d81-8f07d43b7d52"
@@ -144,14 +108,231 @@
     <packageHasNamedElement>
       <class
         Id="21a45882-4f18-4b82-8630-88c6756051f9"
-        name="CookieBakery"
+        name="TheCookieBakery"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="2306748c-804e-486f-9b6c-38846146291e"
+            isDerived="false"
+            sourceEndRoleName="TheCookieBakery"
+            targetEndRoleName="Factory"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="280dc6c8-dd28-4d2f-84d8-4c354efc09ae"
+              LastKnownName="Factory"
+              LastKnownLocation="ModelingProject2.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c0fdf2ef-b647-4248-8bdb-846b376db5aa"
+                  name="TheCookieBakery"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d8b16203-8193-4e47-9071-6dfe5d21ad2d"
+                  name="Factory"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
         <ownedOperationsInternal>
           <operation
             Id="f462d05c-970f-47ca-ac68-254ccc9bc5f4"
             name="MakeCookies"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="032011e1-438f-474c-8f7c-456c9c716d37"
+            name="Ready"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="e6c8c42a-d6fd-4517-b63d-0b102cc76d65"
+        name="CookieFactory,s"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="ddc09361-e7fc-4ab1-93c3-617110f325a3"
+            isDerived="false"
+            sourceEndRoleName="CookieFactory,s"
+            targetEndRoleName="Factory"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="280dc6c8-dd28-4d2f-84d8-4c354efc09ae"
+              LastKnownName="Factory"
+              LastKnownLocation="ModelingProject2.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="570a3e15-d99a-4073-8550-df73407a9e3b"
+                  name="CookieFactory,s"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="0d7a49aa-20bf-41a1-872d-84e7c5c9c14e"
+                  name="Factory"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation
+            Id="575ffd52-eab6-462e-89c4-591fb42001b1"
+            name="MakeCookie"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="03b0aa87-f536-47d5-8a69-cdd3133ce5b2"
+        name="CookieBakery"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="afc8d24d-d702-49d4-97aa-0d58a9178360"
+            isSubstitutable="false">
+            <classMoniker
+              Id="e6c8c42a-d6fd-4517-b63d-0b102cc76d65"
+              LastKnownName="CookieFactory,s"
+              LastKnownLocation="ModelingProject2.uml" />
+          </generalization>
+          <generalization
+            Id="553105e8-6779-464e-ba6b-55f0218cd26c"
+            isSubstitutable="false">
+            <classMoniker
+              Id="21a45882-4f18-4b82-8630-88c6756051f9"
+              LastKnownName="TheCookieBakery"
+              LastKnownLocation="ModelingProject2.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="280dc6c8-dd28-4d2f-84d8-4c354efc09ae"
+        name="Factory"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="d9545a8c-81e5-44a2-863c-a26bdfa298bd"
+            isDerived="false"
+            sourceEndRoleName="Factory"
+            targetEndRoleName="Person"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="c3da0923-db12-4f99-9a49-c761b9e34194"
+              LastKnownName="Person"
+              LastKnownLocation="ModelingProject2.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="256f2295-c569-4502-a981-42c27f641a64"
+                  name="Factory"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c030ac2d-a615-42d3-acda-37f5a7649ab5"
+                  name="Person"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="7ffe30a5-ee65-4f73-a3dd-66c310bc8270"
+                      name="Lower"
+                      value="3" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="f5f253a4-2737-4fce-a1e3-ae58290ef7ae"
+                      name="Upper"
+                      value="3" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation
+            Id="de5f7105-9070-4184-a4f8-be3b471c92c9"
+            name="CreatePerson"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="100a8068-47ec-4b0e-b6c5-99b1b73983a2"
+            name="CreateBakery"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
