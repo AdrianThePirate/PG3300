@@ -47,8 +47,8 @@ namespace Snake{
 
 
 			//Creates and starts stopwatch
-			Stopwatch t = new Stopwatch();
-			t.Start();
+			Stopwatch time = Factory.CreateStopwatch();
+			time.Start();
 
 			// ----The game startes here-----
 			while (!gg) {
@@ -73,15 +73,15 @@ namespace Snake{
 				//Does the action
 				if (!pause) {
 					// If not passed 100ms return to start of game
-					if (t.ElapsedMilliseconds < 100)
+					if (time.ElapsedMilliseconds < 100)
 						continue;
 
 					// Restes stopwatch
-					t.Restart();
+					time.Restart();
 					//Creates objects of point (posistion) basde in snakes posstiosn
 					Position tail = Factory.CreatePosition(location: snake.First());
 					Position head = Factory.CreatePosition(location: snake.Last());
-					Position newH = head;
+					Position newH = Factory.CreatePosition(location: head);
 
 					//Cheack direction and moves newH accordingly. Directions values 0 = up, 1 = right, 2 = down, 3 = left
 					switch(newDir) {
