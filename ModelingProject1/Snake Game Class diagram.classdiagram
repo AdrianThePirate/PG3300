@@ -504,6 +504,29 @@
             <elementDefinition Id="94355c24-e50d-4823-abcc-505e58b05884" />
           </association>
         </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="d94ddf77-8bf0-4b96-809d-08baf6b689cb" name="Action action" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b39c0d3e-a1c2-478f-a80b-a9f78ea466d3" />
+          </property>
+          <property Id="97e659a7-1425-4c13-b1ee-97637a7d7821" name="Food food" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="7fc60064-e294-4a31-a687-7db1d2dfb119" />
+          </property>
+          <property Id="9f8dd29e-7cd4-4809-8c2d-e5a446d8dcd0" name="GameState gameState" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="3c9f4c6a-2de6-4235-b28d-bc61aa2998cd" />
+          </property>
+          <property Id="f341ed61-7b13-4e42-89e9-8a6b4647ccc9" name="GUI GUI" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="3fee2e65-035d-4bb7-a05e-d90d254d71d2" />
+          </property>
+          <property Id="ff49069c-b305-4c62-8c34-1cf045dde82f" name="InputHandler inputHandler" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="ecdf7268-2f38-4380-b4e8-d85d619553ab" />
+          </property>
+          <property Id="bbd9c418-cb7e-424e-8bf2-f355c810500e" name="Snake snake" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b58337c7-ed88-4057-ad34-0f300bef87dc" />
+          </property>
+          <property Id="9b4d259a-6a63-4885-b447-b96694f84f6b" name="Stopwatch stopwatch" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="30c500de-ed1e-4c25-9e3c-3306f193fcd7" />
+          </property>
+        </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation Id="3ebbf796-2138-436e-9c6b-d3532f856813" name="CreatStopwatch" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="b6126d8d-611c-4a49-83e8-bee6e58d5ace" />
@@ -1954,6 +1977,14 @@
     <logicalClassDesignerModelHasTypes>
       <class Id="ab38aaaa-9ffc-4045-957c-efd669c32bd6" name="GUI" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="007aa1fd-62c1-406c-bc25-f0f4119c88cb" />
+        <ownedAttributesInternal>
+          <property Id="786be925-5abb-4f18-8835-7badbb1a0682" name="boardH" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="2ba2a062-c16f-453f-a98c-4c54d5b1855f" />
+          </property>
+          <property Id="09cb0a2e-a799-4eae-b612-2832cd807f9f" name="boardW" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="6c0c5ca4-0492-4a1b-8fb3-55e71869cd79" />
+          </property>
+        </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation Id="f845e0b1-aa4a-4f63-8b10-9632ecb7fdaa" name="Sizel" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="11bcc554-9fc1-4490-9392-8005083bf21b" />
