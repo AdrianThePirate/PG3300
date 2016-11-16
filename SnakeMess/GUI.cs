@@ -18,6 +18,11 @@ namespace Snake {
 			boardH = Console.WindowHeight;
 		}
 
+		public int Size() {
+			int size = boardW * boardH;
+			return size;
+		}
+
 		public void WriteGreen(Position location) {
 			Console.ForegroundColor = ConsoleColor.Green;
 			Console.SetCursorPosition(location.xCord,location.yCord);

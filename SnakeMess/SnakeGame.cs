@@ -101,7 +101,7 @@ namespace Snake{
 					//Test if newH is on the food
 					if (newH.Equals(food.GetLocation())) { 
 						//Cheacks if there is room for food
-						if (snake.Size() + 1 >= GUI.boardW * GUI.boardH)
+						if (snake.Size() + 1 >= GUI.Size())
 							// No more room to place apples - game over.
 							gg = true;
 						else {
