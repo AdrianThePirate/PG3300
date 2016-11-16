@@ -8,3 +8,5 @@ D:\Git\PG3300\SnakeMess\obj\x86\Debug\SnakeMess.pdb
 D:\Git\PG3300\SnakeMess\bin\Debug\SnakeMess.exe
 D:\Git\PG3300\SnakeMess\bin\Debug\SnakeMess.pdb
 D:\Git\PG3300\SnakeMess\obj\x86\Debug\SnakeMess.csprojResolveAssemblyReference.cache
+E:\C#\PG3300\SnakeMess\obj\x86\Debug\SnakeMess.exe
+E:\C#\PG3300\SnakeMess\obj\x86\Debug\SnakeMess.pdb
