@@ -36,7 +36,11 @@ namespace Snake {
 			snake.RemoveAt(0);
 		}
 
-		public bool CollisionCheck(int xCord, int yCord) {
+		public bool CollisionCheck(int xCord = 0,int yCord = 0,Position position = null) {
+			if(position != null){
+				xCord = position.xCord;
+				yCord = position.yCord;
+			}
 			bool result = false;
 			foreach(Position location in snake) {
 				if(location.xCord == xCord && location.yCord == yCord) {

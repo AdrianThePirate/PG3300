@@ -25,7 +25,7 @@ namespace Snake{
 			short last = newDir;
 			int boardW = Console.WindowWidth, boardH = Console.WindowHeight;
 			Random rng = new Random();
-			Position app = Factory.CreatePosition();
+			Food food = Factory.CreateFood();
 			//Creats list of point (posistions)
 			Snake snake = Factory.CreateSnake();
 			//GUI fuck
@@ -35,12 +35,12 @@ namespace Snake{
 
 			//Creates food
 			while (true) {
-				app.xCord = rng.Next(0, boardW); app.yCord = rng.Next(0, boardH);
-				bool spot = snake.CollisionCheck(app.xCord,app.yCord);
+				food.NewFood(boardW,boardH);
+				bool spot = snake.CollisionCheck(position: food.GetLocation());
 
 				//Prints food, if not loced on snake
 				if (!spot) {
-					Console.ForegroundColor = ConsoleColor.Green; Console.SetCursorPosition(app.xCord, app.yCord); Console.Write("$");
+					Console.ForegroundColor = ConsoleColor.Green; Console.SetCursorPosition(food.GetLocation().xCord, food.GetLocation().yCord); Console.Write("$");
 					break;
 				}
 			}
@@ -81,7 +81,7 @@ namespace Snake{
 					//Creates objects of point (posistion) basde in snakes posstiosn
 					Position tail = Factory.CreatePosition(location: snake.First());
 					Position head = Factory.CreatePosition(location: snake.Last());
-					Position newH = Factory.CreatePosition(location: head);
+					Position newH = head;
 
 					//Cheack direction and moves newH accordingly. Directions values 0 = up, 1 = right, 2 = down, 3 = left
 					switch(newDir) {
@@ -103,8 +103,9 @@ namespace Snake{
 						gg = true;
 					else if (newH.xCord < 0 || newH.yCord >= boardH)
 						gg = true;
-					//Test is newH is on the food
-					if (newH.xCord == app.xCord && newH.yCord == app.yCord) {
+					//Test if newH is on the food
+					if (newH.xCord == food.GetLocation().xCord && newH.yCord == food.GetLocation().yCord) {
+					//if (newH.Equals(food.GetLocation())) { 
 						//Cheacks if there is room for food
 						if (snake.Size() + 1 >= boardW * boardH)
 							// No more room to place apples - game over.
@@ -112,8 +113,8 @@ namespace Snake{
 						else {
 							//Creates new food
 							while (true) {
-								app.xCord = rng.Next(0, boardW); app.yCord = rng.Next(0, boardH);
-								bool found = snake.CollisionCheck(app.xCord, app.yCord);
+								food.NewFood(boardW, boardH);
+								bool found = snake.CollisionCheck(position: food.GetLocation());
 								//If new food is added stets inUse = true and breks teh creat food
 								if (!found) {
 									inUse = true;
@@ -143,7 +144,7 @@ namespace Snake{
 							Console.SetCursorPosition(tail.xCord, tail.yCord); Console.Write(" ");
 						} else {
 							//Prints new food
-							Console.ForegroundColor = ConsoleColor.Green; Console.SetCursorPosition(app.xCord, app.yCord); Console.Write("$");
+							Console.ForegroundColor = ConsoleColor.Green; Console.SetCursorPosition(food.GetLocation().xCord, food.GetLocation().yCord); Console.Write("$");
 							inUse = false;
 						}
 						//adds newH to the snake list

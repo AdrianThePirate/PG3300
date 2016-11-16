@@ -8,6 +8,8 @@ namespace Snake {
 
 		private static Position position;
 		private static Snake snake;
+		private static Food food;
+		private static Random random;
 
 		public static Position CreatePosition(int xCord = 0, int yCord = 0, Position location = null) {
 			if(location != null) {
@@ -21,6 +23,16 @@ namespace Snake {
 		public static Snake CreateSnake() {
 			snake = new Snake();
 			return snake;
+		}
+
+		public static Food CreateFood() {
+			food = new Food();
+			return food;
+		}
+
+		public static Random CreateRandom() {
+			random = new Random();
+			return random;
 		}
 	}
 }
