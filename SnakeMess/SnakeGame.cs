@@ -23,24 +23,19 @@ namespace Snake{
 			bool gg = false, pause = false, inUse = false;
 			short newDir = 2; // 0 = up, 1 = right, 2 = down, 3 = left
 			short last = newDir;
-			int boardW = Console.WindowWidth, boardH = Console.WindowHeight;
-			Random rng = new Random();
 			Food food = Factory.CreateFood();
+			GUI GUI = Factory.CreateGUI();
 			//Creats list of point (posistions)
 			Snake snake = Factory.CreateSnake();
-			//GUI fuck
-			Console.CursorVisible = false;
-			Console.Title = "Westerdals Oslo ACT - SNAKE";
-			Console.ForegroundColor = ConsoleColor.Green; Console.SetCursorPosition(10, 10); Console.Write("@");
 
 			//Creates food
 			while (true) {
-				food.NewFood(boardW,boardH);
+				food.NewFood(GUI.boardW,GUI.boardH);
 				bool spot = snake.CollisionCheck(food.GetLocation());
 
 				//Prints food, if not loced on snake
 				if (!spot) {
-					Console.ForegroundColor = ConsoleColor.Green; Console.SetCursorPosition(food.GetLocation().xCord, food.GetLocation().yCord); Console.Write("$");
+					GUI.WriteFood(food.GetLocation());
 					break;
 				}
 			}
@@ -99,20 +94,20 @@ namespace Snake{
 							break;
 					}
 					//Cheack if newH is located outside the game area
-					if (newH.yCord < 0 || newH.xCord >= boardW)
+					if (newH.yCord < 0 || newH.xCord >= GUI.boardW)
 						gg = true;
-					else if (newH.xCord < 0 || newH.yCord >= boardH)
+					else if (newH.xCord < 0 || newH.yCord >= GUI.boardH)
 						gg = true;
 					//Test if newH is on the food
 					if (newH.Equals(food.GetLocation())) { 
 						//Cheacks if there is room for food
-						if (snake.Size() + 1 >= boardW * boardH)
+						if (snake.Size() + 1 >= GUI.boardW * GUI.boardH)
 							// No more room to place apples - game over.
 							gg = true;
 						else {
 							//Creates new food
 							while (true) {
-								food.NewFood(boardW, boardH);
+								food.NewFood(GUI.boardW, GUI.boardH);
 								bool found = snake.CollisionCheck(food.GetLocation());
 								//If new food is added stets inUse = true and breks teh creat food
 								if (!found) {
@@ -134,22 +129,19 @@ namespace Snake{
 
 					//Updated GUI
 					if (!gg) {
-						Console.ForegroundColor = ConsoleColor.Yellow;
-						//Overides old head with body part
-						Console.SetCursorPosition(head.xCord, head.yCord); Console.Write("0");
 						//Test if not added new food
 						if (!inUse) {
 							//Remove the back of snek
-							Console.SetCursorPosition(tail.xCord, tail.yCord); Console.Write(" ");
+							GUI.WriteRemove(tail);
 						} else {
 							//Prints new food
-							Console.ForegroundColor = ConsoleColor.Green; Console.SetCursorPosition(food.GetLocation().xCord, food.GetLocation().yCord); Console.Write("$");
+							GUI.WriteFood(food.GetLocation());
 							inUse = false;
 						}
 						//adds newH to the snake list
 						snake.Add(newH);
 						//Prints new head
-						Console.ForegroundColor = ConsoleColor.Yellow; Console.SetCursorPosition(newH.xCord, newH.yCord); Console.Write("@");
+						GUI.WriteMove(head, newH);
 						//Sets last (controller for last usde direction command) to the newest used direction.
 						last = newDir;
 					}

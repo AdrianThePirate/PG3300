@@ -3746,21 +3746,23 @@
             concurrency="Sequential"
             isQuery="false" />
           <operation
-            Id="98d842b5-373f-401d-8574-30ac54afc35f"
-            name="GetBorderRight"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-          <operation
             Id="7c5b0dfe-2c73-467d-a181-28c4cf97a502"
-            name="GetBorderBottom"
+            name="WriteGreen"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="2c47bbcf-a212-494f-b8b2-6da27d0dfdae"
+                  name="Posistion loactaion"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
           <operation
             Id="daccc11b-f718-4d31-9aea-64e895a2ac43"
             name="GUI"
@@ -3780,29 +3782,15 @@
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="615ee801-e5c5-4009-a98b-3567309a7c4e"
-                  name="int x"
+                  Id="ce62a300-5ed4-4af9-a482-cd48fdf6bd5b"
+                  name="Posistion location"
                   direction="In"
                   isUnique="false" />
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="94f54a80-9d97-40e8-8f86-40499eab239e"
-                  name="int y"
-                  direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="1e8ad66e-54dc-47f6-a565-24d40d746e6d"
-                  name="int xx"
-                  direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="93c1995d-02f5-4a43-93b0-40d525761dc0"
-                  name="int yy"
+                  Id="03a4c7df-8dcd-455b-aa72-73c3146d99de"
+                  name="Position newLocation"
                   direction="In"
                   isUnique="false" />
               </operationHasOwnedParameters>
@@ -3819,15 +3807,8 @@
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="a7f43e06-95cf-4bd3-b588-408bf77fe9d2"
-                  name="int x"
-                  direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="aaa7ab5f-c9f6-4fdf-bb63-8934c59f2754"
-                  name="int y"
+                  Id="91989a15-6351-4952-85e7-f2f4ddf03c4d"
+                  name="Posistion location"
                   direction="In"
                   isUnique="false" />
               </operationHasOwnedParameters>
@@ -3844,15 +3825,8 @@
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="23a58a7f-0bca-435c-a220-86f3847738a5"
-                  name="int x"
-                  direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="e6112085-9b67-48f1-93bb-227b8dceb541"
-                  name="int y"
+                  Id="203d1bdd-1f24-49eb-a73a-e84a0a01c7df"
+                  name="Positsion location"
                   direction="In"
                   isUnique="false" />
               </operationHasOwnedParameters>

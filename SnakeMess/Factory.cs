@@ -12,6 +12,7 @@ namespace Snake {
 		private static Food food;
 		private static Random random;
 		private static Stopwatch stopwatch;
+		private static GUI GUI;
 
 		public static Position CreatePosition(int xCord = 0, int yCord = 0, Position location = null) {
 			if(location != null) {
@@ -23,17 +24,23 @@ namespace Snake {
 		}
 
 		public static Snake CreateSnake() {
-			snake = new Snake();
+			if(snake == null) {
+				snake = new Snake();
+			}
 			return snake;
 		}
 
 		public static Food CreateFood() {
-			food = new Food();
+			if(food == null) {
+				food = new Food();
+			}
 			return food;
 		}
 
 		public static Random CreateRandom() {
-			random = new Random();
+			if(random == null) {
+				random = new Random();
+			}
 			return random;
 		}
 
@@ -42,6 +49,13 @@ namespace Snake {
 				stopwatch = new Stopwatch();
 			}
 			return stopwatch;
+		}
+
+		public static GUI CreateGUI() {
+			if(GUI == null) {
+				GUI = new GUI();
+			}
+			return GUI;
 		}
 	}
 }
