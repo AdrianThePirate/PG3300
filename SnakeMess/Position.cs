@@ -19,5 +19,15 @@ namespace Snake {
 			xCord = input.xCord;
 			yCord = input.yCord;
 		}
+
+		public bool Equals(Position subject) {
+			bool result = true;
+
+			if(xCord != subject.xCord || yCord != subject.yCord) {
+				result = false;
+			}
+
+			return result;
+		}
 	}
 }

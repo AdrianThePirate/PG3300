@@ -36,7 +36,7 @@ namespace Snake{
 			//Creates food
 			while (true) {
 				food.NewFood(boardW,boardH);
-				bool spot = snake.CollisionCheck(position: food.GetLocation());
+				bool spot = snake.CollisionCheck(food.GetLocation());
 
 				//Prints food, if not loced on snake
 				if (!spot) {
@@ -104,8 +104,7 @@ namespace Snake{
 					else if (newH.xCord < 0 || newH.yCord >= boardH)
 						gg = true;
 					//Test if newH is on the food
-					if (newH.xCord == food.GetLocation().xCord && newH.yCord == food.GetLocation().yCord) {
-					//if (newH.Equals(food.GetLocation())) { 
+					if (newH.Equals(food.GetLocation())) { 
 						//Cheacks if there is room for food
 						if (snake.Size() + 1 >= boardW * boardH)
 							// No more room to place apples - game over.
@@ -114,7 +113,7 @@ namespace Snake{
 							//Creates new food
 							while (true) {
 								food.NewFood(boardW, boardH);
-								bool found = snake.CollisionCheck(position: food.GetLocation());
+								bool found = snake.CollisionCheck(food.GetLocation());
 								//If new food is added stets inUse = true and breks teh creat food
 								if (!found) {
 									inUse = true;
@@ -128,7 +127,7 @@ namespace Snake{
 					if (!inUse) {
 						//Removes the back of the snek
 						snake.RemoveEnd();
-						if(snake.CollisionCheck(newH.xCord, newH.yCord)) {
+						if(snake.CollisionCheck(newH)) {
 							gg = true;
 						}
 					}
