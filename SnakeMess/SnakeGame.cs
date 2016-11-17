@@ -20,11 +20,12 @@ namespace Snake{
 		//Main
 		public static void Main(string[] arguments) {
 			//Set values
-			bool gg = false, pause = false, inUse = false;
+			bool inUse = false;
 			short newDir = 2; // 0 = up, 1 = right, 2 = down, 3 = left
 			short last = newDir;
 			Food food = Factory.CreateFood();
 			GUI GUI = Factory.CreateGUI();
+			GameState gameSate = Factory.CreateGameState();
 			//Creats list of point (posistions)
 			Snake snake = Factory.CreateSnake();
 
@@ -46,27 +47,26 @@ namespace Snake{
 			time.Start();
 
 			// ----The game startes here-----
-			while (!gg) {
+			while (!gameSate.death) {
 				//Looks of key input (if any)
 				if (Console.KeyAvailable) {
 					ConsoleKeyInfo cki = Console.ReadKey(true);
-					if (cki.Key == ConsoleKey.Escape)
-						gg = true;
-					else if (cki.Key == ConsoleKey.Spacebar)
-						pause = !pause;
+					if(cki.Key == ConsoleKey.Escape)
+						gameSate.SetDeath();
+					else if(cki.Key == ConsoleKey.Spacebar)
+						gameSate.SetPause();
 					//Directions values 0 = up, 1 = right, 2 = down, 3 = left
-					else if (cki.Key == ConsoleKey.UpArrow && last != 2)
+					else if(cki.Key == ConsoleKey.UpArrow && last != 2)
 						newDir = 0;
-					else if (cki.Key == ConsoleKey.RightArrow && last != 3)
+					else if(cki.Key == ConsoleKey.RightArrow && last != 3)
 						newDir = 1;
-					else if (cki.Key == ConsoleKey.DownArrow && last != 0)
+					else if(cki.Key == ConsoleKey.DownArrow && last != 0)
 						newDir = 2;
-					else if (cki.Key == ConsoleKey.LeftArrow && last != 1)
+					else if(cki.Key == ConsoleKey.LeftArrow && last != 1)
 						newDir = 3;
 				}
-
 				//Does the action
-				if (!pause) {
+				if (!gameSate.pause) {
 					// If not passed 100ms return to start of game
 					if (time.ElapsedMilliseconds < 100)
 						continue;
@@ -95,15 +95,15 @@ namespace Snake{
 					}
 					//Cheack if newH is located outside the game area
 					if (newH.yCord < 0 || newH.xCord >= GUI.boardW)
-						gg = true;
+						gameSate.SetDeath();
 					else if (newH.xCord < 0 || newH.yCord >= GUI.boardH)
-						gg = true;
+						gameSate.SetDeath();
 					//Test if newH is on the food
 					if (newH.Equals(food.GetLocation())) { 
 						//Cheacks if there is room for food
 						if (snake.Size() + 1 >= GUI.Size())
 							// No more room to place apples - game over.
-							gg = true;
+							gameSate.SetDeath();
 						else {
 							//Creates new food
 							while (true) {
@@ -123,12 +123,12 @@ namespace Snake{
 						//Removes the back of the snek
 						snake.RemoveEnd();
 						if(snake.CollisionCheck(newH)) {
-							gg = true;
+							gameSate.SetDeath();
 						}
 					}
 
 					//Updated GUI
-					if (!gg) {
+					if (!gameSate.death) {
 						//Test if not added new food
 						if (!inUse) {
 							//Remove the back of snek
