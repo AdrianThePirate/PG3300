@@ -1,5 +1,5 @@
 D:\Git\PG3300\SnakeMess\obj\x86\Debug\Snake.csprojResolveAssemblyReference.cache
-D:\Git\PG3300\SnakeMess\obj\x86\Debug\SnakeMess.exe
-D:\Git\PG3300\SnakeMess\obj\x86\Debug\SnakeMess.pdb
-D:\Git\PG3300\SnakeMess\bin\Debug\SnakeMess.exe
-D:\Git\PG3300\SnakeMess\bin\Debug\SnakeMess.pdb
+D:\Git\PG3300\SnakeMess\bin\Debug\Snake.exe
+D:\Git\PG3300\SnakeMess\bin\Debug\Snake.pdb
+D:\Git\PG3300\SnakeMess\obj\x86\Debug\Snake.exe
+D:\Git\PG3300\SnakeMess\obj\x86\Debug\Snake.pdb
