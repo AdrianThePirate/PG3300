@@ -3746,14 +3746,6 @@
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
-            Id="f9affd31-4d6d-407c-ae87-4be32215aade"
-            name="GetAlive"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-          <operation
             Id="e8bcdf50-41fe-4511-b3e7-4b2a5cabd39d"
             name="SetAlive"
             isLeaf="false"
@@ -3771,14 +3763,6 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
-          <operation
-            Id="bdbf7ec3-4285-477e-8276-680087b1556f"
-            name="GetPause"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
           <operation
             Id="d2474582-ea56-42b0-bccf-df30ce609c4c"
             name="SetPause"
