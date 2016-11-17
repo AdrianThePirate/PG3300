@@ -58,6 +58,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Action.cs" />
     <Compile Include="Food.cs" />
     <Compile Include="Factory.cs" />
     <Compile Include="GameState.cs" />

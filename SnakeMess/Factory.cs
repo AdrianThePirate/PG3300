@@ -14,6 +14,7 @@ namespace Snake {
 		private static Stopwatch stopwatch;
 		private static GUI GUI;
 		private static GameState gameState;
+		private static Action action;
 
 		public static Position CreatePosition(int xCord = 0, int yCord = 0, Position location = null) {
 			if(location != null) {
@@ -64,6 +65,13 @@ namespace Snake {
 				gameState = new GameState();
 			}
 			return gameState;
+		}
+
+		public static Action CreateAction() {
+			if(action == null) {
+				action = new Action();
+			}
+			return action;
 		}
 	}
 }

@@ -5,8 +5,8 @@ using System.Text;
 
 namespace Snake {
 	class GUI {
-		public int boardW { get; }
-		public int boardH { get; }
+		public int boardW { get; private set; }
+		public int boardH { get; private set; }
 
 		public GUI() {
 			Console.CursorVisible = false;
@@ -21,16 +21,6 @@ namespace Snake {
 		public int Size() {
 			int size = boardW * boardH;
 			return size;
-		}
-
-		public void WriteGreen(Position location) {
-			Console.ForegroundColor = ConsoleColor.Green;
-			Console.SetCursorPosition(location.xCord,location.yCord);
-		}
-
-		public void WriteYellow(Position location) {
-			Console.ForegroundColor = ConsoleColor.Yellow;
-			Console.SetCursorPosition(location.xCord,location.yCord);
 		}
 
 		public void WriteFood(Position location) {
@@ -49,5 +39,16 @@ namespace Snake {
 			WriteGreen(location);
 			Console.Write(" ");
 		}
+
+		private void WriteGreen(Position location) {
+			Console.ForegroundColor = ConsoleColor.Green;
+			Console.SetCursorPosition(location.xCord,location.yCord);
+		}
+
+		private void WriteYellow(Position location) {
+			Console.ForegroundColor = ConsoleColor.Yellow;
+			Console.SetCursorPosition(location.xCord,location.yCord);
+		}
+
 	}
 }

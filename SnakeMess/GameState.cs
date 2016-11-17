@@ -11,7 +11,6 @@ namespace Snake {
 		public GameState() {
 			pause = false;
 			death = false;
-
 		}
 
 		public void SetPause() {

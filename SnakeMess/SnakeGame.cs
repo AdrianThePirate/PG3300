@@ -26,20 +26,9 @@ namespace Snake{
 			Food food = Factory.CreateFood();
 			GUI GUI = Factory.CreateGUI();
 			GameState gameSate = Factory.CreateGameState();
+			Action action = Factory.CreateAction();
 			//Creats list of point (posistions)
 			Snake snake = Factory.CreateSnake();
-
-			//Creates food
-			while (true) {
-				food.NewFood(GUI.boardW,GUI.boardH);
-				bool spot = snake.CollisionCheck(food.GetLocation());
-
-				//Prints food, if not loced on snake
-				if (!spot) {
-					GUI.WriteFood(food.GetLocation());
-					break;
-				}
-			}
 
 
 			//Creates and starts stopwatch
@@ -56,95 +45,24 @@ namespace Snake{
 					else if(cki.Key == ConsoleKey.Spacebar)
 						gameSate.SetPause();
 					//Directions values 0 = up, 1 = right, 2 = down, 3 = left
-					else if(cki.Key == ConsoleKey.UpArrow && last != 2)
-						newDir = 0;
-					else if(cki.Key == ConsoleKey.RightArrow && last != 3)
-						newDir = 1;
-					else if(cki.Key == ConsoleKey.DownArrow && last != 0)
-						newDir = 2;
-					else if(cki.Key == ConsoleKey.LeftArrow && last != 1)
-						newDir = 3;
+					else if(cki.Key == ConsoleKey.UpArrow)
+						action.ChangeDirection(Action.direction.Up);
+					else if(cki.Key == ConsoleKey.RightArrow)
+						action.ChangeDirection(Action.direction.Right);
+					else if(cki.Key == ConsoleKey.DownArrow)
+						action.ChangeDirection(Action.direction.Down);
+					else if(cki.Key == ConsoleKey.LeftArrow)
+						action.ChangeDirection(Action.direction.Left);
 				}
 				//Does the action
 				if (!gameSate.pause) {
 					// If not passed 100ms return to start of game
 					if (time.ElapsedMilliseconds < 100)
 						continue;
-
+					action.Move();
 					// Restes stopwatch
 					time.Restart();
-					//Creates objects of point (posistion) basde in snakes posstiosn
-					Position tail = Factory.CreatePosition(location: snake.First());
-					Position head = Factory.CreatePosition(location: snake.Last());
-					Position newH = Factory.CreatePosition(location: head);
-
-					//Cheack direction and moves newH accordingly. Directions values 0 = up, 1 = right, 2 = down, 3 = left
-					switch(newDir) {
-						case 0:
-							newH.yCord -= 1;
-							break;
-						case 1:
-							newH.xCord += 1;
-							break;
-						case 2:
-							newH.yCord += 1;
-							break;
-						default:
-							newH.xCord -= 1;
-							break;
-					}
-					//Cheack if newH is located outside the game area
-					if (newH.yCord < 0 || newH.xCord >= GUI.boardW)
-						gameSate.SetDeath();
-					else if (newH.xCord < 0 || newH.yCord >= GUI.boardH)
-						gameSate.SetDeath();
-					//Test if newH is on the food
-					if (newH.Equals(food.GetLocation())) { 
-						//Cheacks if there is room for food
-						if (snake.Size() + 1 >= GUI.Size())
-							// No more room to place apples - game over.
-							gameSate.SetDeath();
-						else {
-							//Creates new food
-							while (true) {
-								food.NewFood(GUI.boardW, GUI.boardH);
-								bool found = snake.CollisionCheck(food.GetLocation());
-								//If new food is added stets inUse = true and breks teh creat food
-								if (!found) {
-									inUse = true;
-									break;
-								}
-							}
-						}
-					}
-
-					//If new food is not added tests if self-cannibalism.
-					if (!inUse) {
-						//Removes the back of the snek
-						snake.RemoveEnd();
-						if(snake.CollisionCheck(newH)) {
-							gameSate.SetDeath();
-						}
-					}
-
-					//Updated GUI
-					if (!gameSate.death) {
-						//Test if not added new food
-						if (!inUse) {
-							//Remove the back of snek
-							GUI.WriteRemove(tail);
-						} else {
-							//Prints new food
-							GUI.WriteFood(food.GetLocation());
-							inUse = false;
-						}
-						//adds newH to the snake list
-						snake.Add(newH);
-						//Prints new head
-						GUI.WriteMove(head, newH);
-						//Sets last (controller for last usde direction command) to the newest used direction.
-						last = newDir;
-					}
+					
 				}
 			}
 		}
