@@ -2777,22 +2777,6 @@
                 </propertyInstances>
               </stereotypeInstance>
             </appliedStereotypesInternal>
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="74e3c6fd-3fa5-4421-8040-2cb3ec3aebaa"
-                  name="Action action"
-                  direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="0f8d7d3f-6d3b-4b2a-8873-48925f342cdd"
-                  name="GameState state"
-                  direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-            </ownedParameters>
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -3077,7 +3061,7 @@
           </property>
           <property
             Id="97f66d84-02cc-4b63-9b82-db2e2aa57cbf"
-            name="GameState state"
+            name="GameState gameState"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -3351,11 +3335,66 @@
               </stereotypeInstance>
             </appliedStereotypesInternal>
           </property>
+          <property
+            Id="bb04e7c9-d6ec-42f2-abed-afd97c9463d5"
+            name="bool newFood"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="d684fbd9-dd3d-41bb-9641-9903de8f294d"
+            name="Position Head"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="ad98aeab-003e-4eee-920d-8d93617a073b"
+            name="Position newHead"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="614ebf9a-232d-420e-bef9-68cce9fa7001"
+            name="enum directions"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="29660a58-10e3-4dc8-8f47-cb7acef05a36"
+            name="direction dir"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
             Id="578468a1-ef55-4cdb-842f-3565570b25c7"
-            name="SetDireaction"
+            name="ChangeDireaction"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -3414,8 +3453,8 @@
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="cbb3f5f7-0e41-4eb3-a52a-92e1bf452935"
-                  name="enum direction"
+                  Id="5ce9d856-6026-4425-9f17-9cee7ace0d12"
+                  name="direction dir"
                   direction="In"
                   isUnique="false" />
               </operationHasOwnedParameters>
@@ -3538,29 +3577,6 @@
                 </propertyInstances>
               </stereotypeInstance>
             </appliedStereotypesInternal>
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="59c785a6-7895-48ec-ac2b-5e24814afb60"
-                  name="GameState state"
-                  direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="ce9b18ec-b0dc-4805-a4e7-3818aecbe4e9"
-                  name="Food food"
-                  direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="7739426c-571d-4623-acc0-5fb6eb255717"
-                  name="GUI window"
-                  direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-            </ownedParameters>
           </operation>
           <operation
             Id="a7fa96a8-7ef3-4c05-885c-13630bbef296"
@@ -3621,6 +3637,22 @@
               </stereotypeInstance>
             </appliedStereotypesInternal>
           </operation>
+          <operation
+            Id="97c92f49-7a3c-4a86-90ef-266f05a649ce"
+            name="NewFood"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="74178f21-2a13-4aab-a264-fa8e7e4476e1"
+            name="UpdatedGUI"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>

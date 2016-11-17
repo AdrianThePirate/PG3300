@@ -1295,18 +1295,6 @@
               </stereotypeInstance>
             </appliedStereotypesInternal>
             <elementDefinition Id="3ca6ce49-5fbb-45e5-b200-8349f752eec8" />
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="8a4e4682-00aa-4048-b695-6c05dee4090f" name="Action action" direction="In" isUnique="false">
-                  <elementDefinition Id="74e3c6fd-3fa5-4421-8040-2cb3ec3aebaa" />
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="ec5090ef-9263-4323-96e7-be2c01b429c1" name="GameState state" direction="In" isUnique="false">
-                  <elementDefinition Id="0f8d7d3f-6d3b-4b2a-8873-48925f342cdd" />
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -1470,7 +1458,7 @@
             </appliedStereotypesInternal>
             <elementDefinition Id="595a5c16-de5f-4ffa-a965-f017a11741b6" />
           </property>
-          <property Id="c68ca9d0-c26c-4c7d-b0db-b4e58aa89fe7" name="GameState state" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="c68ca9d0-c26c-4c7d-b0db-b4e58aa89fe7" name="GameState gameState" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <appliedStereotypesInternal>
               <stereotypeInstance Id="283d4955-aba2-436f-9f38-c07afbd9579c" name="property" profile="CSharpProfile">
                 <elementDefinition Id="5555bffa-8479-4c0b-9417-75abd436dc23" />
@@ -1678,9 +1666,24 @@
             </appliedStereotypesInternal>
             <elementDefinition Id="f5ca4f22-a998-4655-a7e9-627cb41c401e" />
           </property>
+          <property Id="0dc71f56-d58b-4164-a2b5-a83a6cffbb1f" name="bool newFood" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="bb04e7c9-d6ec-42f2-abed-afd97c9463d5" />
+          </property>
+          <property Id="8f45b82a-4091-4444-8380-94ad9f7658ba" name="Position Head" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="d684fbd9-dd3d-41bb-9641-9903de8f294d" />
+          </property>
+          <property Id="140edc31-4699-438f-95cc-9c64f3c5c661" name="Position newHead" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="ad98aeab-003e-4eee-920d-8d93617a073b" />
+          </property>
+          <property Id="8fc00e91-07eb-4d64-a30f-b0e6b5c7f597" name="enum directions" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="614ebf9a-232d-420e-bef9-68cce9fa7001" />
+          </property>
+          <property Id="6e53b3e5-51ec-4183-b97e-970122282fcf" name="direction dir" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="29660a58-10e3-4dc8-8f47-cb7acef05a36" />
+          </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
-          <operation Id="3bc0cc4e-ad09-495c-acf3-b17a243cf982" name="SetDireaction" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="3bc0cc4e-ad09-495c-acf3-b17a243cf982" name="ChangeDireaction" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <appliedStereotypesInternal>
               <stereotypeInstance Id="6ff8dcac-18f1-4493-a888-7410528339c9" name="method" profile="CSharpProfile">
                 <elementDefinition Id="27750cea-5ba3-4f8c-905e-091f753cae4b" />
@@ -1727,8 +1730,8 @@
             <elementDefinition Id="578468a1-ef55-4cdb-842f-3565570b25c7" />
             <ownedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="7b131440-13f3-4cb7-b4e4-483409eb6fc3" name="enum direction" direction="In" isUnique="false">
-                  <elementDefinition Id="cbb3f5f7-0e41-4eb3-a52a-92e1bf452935" />
+                <parameter Id="ddeb674b-d6a5-44f3-a729-eb0a5a6da0c8" name="direction dir" direction="In" isUnique="false">
+                  <elementDefinition Id="5ce9d856-6026-4425-9f17-9cee7ace0d12" />
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
@@ -1824,23 +1827,6 @@
               </stereotypeInstance>
             </appliedStereotypesInternal>
             <elementDefinition Id="67a064aa-b3de-4723-8c3c-45ae68d21bc4" />
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="92701a81-f6b9-4729-8fc6-67e986d49485" name="GameState state" direction="In" isUnique="false">
-                  <elementDefinition Id="59c785a6-7895-48ec-ac2b-5e24814afb60" />
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="058754d7-efab-468c-9fef-10d70ee47daf" name="Food food" direction="In" isUnique="false">
-                  <elementDefinition Id="ce9b18ec-b0dc-4805-a4e7-3818aecbe4e9" />
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="e851e491-a242-45eb-a556-6866e540dc04" name="GUI window" direction="In" isUnique="false">
-                  <elementDefinition Id="7739426c-571d-4623-acc0-5fb6eb255717" />
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
           </operation>
           <operation Id="42f43a87-9311-4c36-a9ad-9dde7a731320" name="DeathCheack" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <appliedStereotypesInternal>
@@ -1887,6 +1873,12 @@
               </stereotypeInstance>
             </appliedStereotypesInternal>
             <elementDefinition Id="a7fa96a8-7ef3-4c05-885c-13630bbef296" />
+          </operation>
+          <operation Id="98d22f64-1397-4949-a540-b3dcabb76e1f" name="NewFood" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="97c92f49-7a3c-4a86-90ef-266f05a649ce" />
+          </operation>
+          <operation Id="69ac7377-b265-4596-b87b-9f3825b81ca9" name="UpdatedGUI" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="74178f21-2a13-4aab-a264-fa8e7e4476e1" />
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -1942,9 +1934,6 @@
           </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
-          <operation Id="646e569f-48ff-483f-acd8-c748eeff9b2a" name="GetAlive" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="f9affd31-4d6d-407c-ae87-4be32215aade" />
-          </operation>
           <operation Id="f31903e7-430b-463f-a2b6-e42cce192ec8" name="SetAlive" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="e8bcdf50-41fe-4511-b3e7-4b2a5cabd39d" />
             <ownedParameters>
@@ -1954,9 +1943,6 @@
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
-          </operation>
-          <operation Id="88a741a3-b7cd-485a-83d2-1ffd3baf160e" name="GetPause" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="bdbf7ec3-4285-477e-8276-680087b1556f" />
           </operation>
           <operation Id="ae34d207-6be1-4f24-8e16-2606a7384ac0" name="SetPause" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="d2474582-ea56-42b0-bccf-df30ce609c4c" />
