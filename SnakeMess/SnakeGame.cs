@@ -44,12 +44,10 @@ namespace Snake{
 				//Does the action
 				if (!gameSate.pause) {
 					// If not passed 100ms return to start of game
-					if (time.ElapsedMilliseconds < 100)
-						continue;
-					action.Move();
-					// Restes stopwatch
-					time.Restart();
-					
+					if (time.ElapsedMilliseconds >= 100) {
+						action.Move();
+						time.Restart();
+					}
 				}
 			}
 		}
