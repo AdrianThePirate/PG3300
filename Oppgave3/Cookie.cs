@@ -33,6 +33,7 @@ namespace Oppgave3 {
             if (cookieTypes.Count() == 0) {
                 cookieTypes.Add("Chocolate");
                 cookieTypes.Add("Vanilla");
+            
                 }
           
             return cookieTypes;

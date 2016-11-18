@@ -25,19 +25,19 @@ namespace Oppgave3 {
             }
         
         public void orders() {
-            var orders = new List<String>();
+            var cookieOrders = new List<String>();
             
                 for (int j = 0; j < Bakery.GetBakeries().Count(); j++) {
-                    orders.Add(Bakery.GetBakeries()[j] + " ");
+                cookieOrders.Add(Bakery.GetBakeries()[j] + " ");
                     }
                 for (int k = 0; k < Cookie.GetCookieTypes().Count(); k++) {
-                    orders.Add(Cookie.GetCookieTypes()[k] + " ");
+                cookieOrders.Add(Cookie.GetCookieTypes()[k] + " ");
                     }
                 
-            Bakery nigger = Factory.CreateBakery("");
-            nigger.MakeCookies(orders);
+            Bakery bakery = Factory.CreateBakery("");
+            bakery.MakeCookieOrders(cookieOrders);
 
-            foreach (String s in orders) {
+            foreach (String s in cookieOrders) {
                 Console.WriteLine(s);
                 }
             Console.ReadLine();

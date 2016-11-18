@@ -28,12 +28,13 @@ namespace Oppgave3 {
         public static void SellCookieTo(Customer customer) {
                 
             }
-        public  void MakeCookies(List<String> list) {
+        public  void MakeCookieOrders(List<String> list) {
             for (int i=0;i<100;i++) {
                 for (int j = 0; j < bakeries.Count(); j++) {
                     for (int k=0;k< Cookie.GetCookieTypes().Count();k++) {
-                        Console.WriteLine(list[j]+list[bakeries.Count()+k]);
-
+                      
+                       String temp= list[j]+list[bakeries.Count()+k];
+                        list.Add(temp);
                         }
                     }
                 }
