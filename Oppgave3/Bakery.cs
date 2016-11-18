@@ -20,6 +20,8 @@ namespace Oppgave3 {
             if (bakeries.Count()==0) {
                 bakeries.Add("Barrack O bakery");
                 bakeries.Add("Trump Tower cafe");
+                bakeries.Add("123");
+                bakeries.Add("Osama");
                 }
 
             return bakeries;
@@ -29,7 +31,7 @@ namespace Oppgave3 {
                 
             }
         public  void MakeCookieOrders(List<String> list) {
-            for (int i=0;i<100;i++) {
+            for (int i=0;i<5;i++) {
                 for (int j = 0; j < bakeries.Count(); j++) {
                     for (int k=0;k< Cookie.GetCookieTypes().Count();k++) {
                       
@@ -38,8 +40,9 @@ namespace Oppgave3 {
                         }
                     }
                 }
-            Console.ReadLine();
-
+            for (int i =0; i < Cookie.GetCookieTypes().Count + bakeries.Count(); i++) {
+                list.Remove(list[0]);
+                }
             }
 
         }
