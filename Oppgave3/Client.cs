@@ -42,15 +42,16 @@ namespace Oppgave3 {
             Thread tedg = new Thread(Ted);
 
             t.Start();
-            gregg.Start();
             tedg.Start();
             fredd.Start();
+            gregg.Start();
+
             Console.ReadLine();
 
             }
         public void thread() {
             orders();
-            SortOrders();
+            //SortOrders();
             }
 
         public void orders() {
@@ -75,16 +76,21 @@ namespace Oppgave3 {
             }
         public void Fred() {
             bakery.SellCookieTo(fred);
+            Console.WriteLine(1);
             Thread.Sleep(1000);
             }
         public void Greg() {
             bakery.SellCookieTo(greg);
-            Thread.Sleep(1000);
+            Console.WriteLine(2);
+
+            Thread.Sleep(0);
 
             }
         public void Ted() {
             bakery.SellCookieTo(ted);
-            Thread.Sleep(1000);
+            Console.WriteLine(3);
+
+            Thread.Sleep(10000);
 
             }
 

@@ -32,10 +32,10 @@ namespace Oppgave3 {
             for (int i = 0; i < Client.cookieOrders.Count(); i += 2) {
                 String temp = "";
                 temp = Client.cookieOrders[i];
-                Console.Write(temp);
+                //Console.Write(temp);
                 temp = Client.cookieOrders[i + 1];
 
-                Console.WriteLine(temp);
+                //Console.WriteLine(temp);
                 customer.TakeCookie(Factory.CreatCookie(Client.cookieOrders[i], Client.cookieOrders[i+1]));
                 Thread.Sleep(445);
                 }
