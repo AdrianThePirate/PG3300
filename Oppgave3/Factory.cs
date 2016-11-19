@@ -14,11 +14,9 @@ namespace Oppgave3 {
         public static Customer CreateCustomer(String customerName) {
             return new Customer(customerName);
             }
-        public  Cookie CreatCookie(String bakery,String type) {
-            if (cookie == null) {
-                cookie = new Cookie(bakery, type);
-                }
-            return cookie;
+        public static Cookie CreatCookie(String bakery,String type) {
+            return new Cookie(bakery,type);
+
             }
         }
 }

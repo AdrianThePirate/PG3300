@@ -36,11 +36,9 @@ namespace Oppgave3 {
                 temp = Client.cookieOrders[i + 1];
 
                 Console.WriteLine(temp);
-                customer.TakeCookie(Factory.CreatCookie("",""));
+                customer.TakeCookie(Factory.CreatCookie(Client.cookieOrders[i], Client.cookieOrders[i+1]));
                 Thread.Sleep(445);
-
                 }
-
             }
         public  void MakeCookieOrders(List<String> list) {
             for (int i=0;i<5;i++) {

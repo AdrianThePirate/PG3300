@@ -14,8 +14,7 @@ namespace Oppgave3 {
     class Client {
         Bakery bakery = new Bakery("");
         public static List<String> cookieOrders = new List<String>();
-        Factory f = new Factory();
-        Cookie yay = f.CreatCookie("Barrack o Bakery", "Chococalte Cookie");
+        Cookie yay = Factory.CreatCookie("Barrack o Bakery", "Chococalte Cookie");
 
         Customer fred = Factory.CreateCustomer("Fred");
         Customer greg = Factory.CreateCustomer("Greg");
@@ -80,12 +79,12 @@ namespace Oppgave3 {
             }
         public void Greg() {
             bakery.SellCookieTo(greg);
-            Thread.Sleep(667);
+            Thread.Sleep(1000);
 
             }
         public void Ted() {
             bakery.SellCookieTo(ted);
-            Thread.Sleep(1300);
+            Thread.Sleep(1000);
 
             }
 
