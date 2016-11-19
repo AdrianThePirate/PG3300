@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 using System.Collections;
+using System.Diagnostics;
+
 
 
 
@@ -19,6 +21,8 @@ namespace Oppgave3 {
         Customer fred = Factory.CreateCustomer("Fred");
         Customer greg = Factory.CreateCustomer("Greg");
         Customer ted = Factory.CreateCustomer("Ted");
+
+        Stopwatch stopwatch;
    
         static void Main(string[] args) {
 
@@ -36,21 +40,25 @@ namespace Oppgave3 {
             }
         public void run() {
 
-            Thread t = new Thread(thread);
+            stopwatch = new Stopwatch();
+            stopwatch.Start();
+
+            //Thread t = new Thread(thread);
             Thread fredd = new Thread(Fred);
             Thread gregg = new Thread(Greg);
             Thread tedg = new Thread(Ted);
-
-            t.Start();
-            gregg.Start();
+            orders();
+            //SortOrders();
+            //t.Start();
             tedg.Start();
             fredd.Start();
+            gregg.Start();
+
             Console.ReadLine();
 
             }
         public void thread() {
-            orders();
-            SortOrders();
+           
             }
 
         public void orders() {
@@ -68,24 +76,40 @@ namespace Oppgave3 {
         public void SortOrders() {
        
 
-            foreach (String s in cookieOrders) {
-                Console.WriteLine(s);
-                }
+            //foreach (String s in cookieOrders) {
+              //  Console.WriteLine(s);
+                //}
             Console.ReadLine();
             }
         public void Fred() {
-            bakery.SellCookieTo(fred);
-            Thread.Sleep(1000);
+            while (true) {
+                if (stopwatch.ElapsedMilliseconds >= 50) {
+                    bakery.SellCookieTo(fred);
+                    Thread.Sleep(1000);
+                    stopwatch.Reset();
+                    break;
+                    }
+                }
             }
         public void Greg() {
-            bakery.SellCookieTo(greg);
-            Thread.Sleep(1000);
-
+            while (true) {
+                if (stopwatch.ElapsedMilliseconds >= 50) {
+                    bakery.SellCookieTo(greg);
+                    Thread.Sleep(1000);
+                    stopwatch.Reset();
+                    break;
+                    }
+                }
             }
         public void Ted() {
-            bakery.SellCookieTo(ted);
-            Thread.Sleep(1000);
-
+            while (true) {
+                if (stopwatch.ElapsedMilliseconds >= 50) {
+                    bakery.SellCookieTo(ted);
+                    Thread.Sleep(1000);
+                    stopwatch.Reset();
+                    break;
+                    }
+                }
             }
 
         }
