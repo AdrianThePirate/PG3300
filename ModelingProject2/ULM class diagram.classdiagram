@@ -21,7 +21,38 @@
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="d3b31f28-39cd-4cc6-a401-b746e83e2620" />
           </association>
+          <association Id="7c934490-b31b-4b71-bcb5-3c931d0130dd" isDerived="false" sourceEndRoleName="Client" targetEndRoleName="Bakeries" isLeaf="false" isAbstract="false">
+            <classMoniker Id="ee2503a2-c0ca-4d90-8fc3-2d05a5e934b9" LastKnownName="Bakeries" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8a60144f-0c18-4d83-9d25-90fd53dd65f8" name="Client" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="95dd4f65-ebad-46a8-9501-65a44d2244d6" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="3353edfc-1664-4dd3-ae59-94f203793261" name="Bakeries" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="0f51c714-0ad3-4ada-81a9-72d158e2778d" name="Lower" value="1">
+                      <elementDefinition Id="3cec81df-e062-4846-a22a-0c225e98f278" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="9e1f78d6-e974-4e82-9dcb-a1b2235c40e0" name="Upper">
+                      <elementDefinition Id="a1fd131d-f203-44d3-a9ad-be0018ea96f9" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="2457e834-a144-49a1-8253-b639f716c3fa" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="6731a2f2-9a8c-49cc-b3db-9586ffe12d5f" />
+          </association>
         </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="faedeef8-94e4-4a34-a260-34d19f530647" name="List&lt;String&gt; orders" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="2d4ea481-2a25-4ba2-8ebc-bcb44c7df227" />
+          </property>
+        </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation Id="84c7f894-4b23-4a3a-9d62-e4549a73fc29" name="CreateBakery" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="e02f934c-a61a-41d7-91d6-dabe1de99cf0" />
@@ -29,11 +60,14 @@
           <operation Id="4741ff95-886f-4c76-a5b0-9916566b2720" name="CreatePerson" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="a21600a7-8911-4118-8191-e1396ba7b814" />
           </operation>
+          <operation Id="8ed82d07-40f3-46f3-b80e-b9bdf0d9e21e" name="SortOrders" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="50c4db58-468c-4499-88e1-45193f1af0ea" />
+          </operation>
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
-      <class Id="74c9adef-40ea-4fb0-863a-a3b71bb223d2" name="Person" isAbstract="false" isLeaf="false" isActiveClass="false">
+      <class Id="74c9adef-40ea-4fb0-863a-a3b71bb223d2" name="Customer" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="c3da0923-db12-4f99-9a49-c761b9e34194" />
         <ownedOperationsInternal>
           <operation Id="40bf0448-9a27-4eed-98a8-aa7f7de5cddb" name="TakeCookie" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
@@ -43,7 +77,7 @@
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
-      <class Id="ee2503a2-c0ca-4d90-8fc3-2d05a5e934b9" name="TheCookieBakery" isAbstract="false" isLeaf="false" isActiveClass="false">
+      <class Id="ee2503a2-c0ca-4d90-8fc3-2d05a5e934b9" name="Bakeries" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="21a45882-4f18-4b82-8630-88c6756051f9" />
         <targetEnds>
           <association Id="2dfea5a5-0a4c-4e5d-a1e4-279025c0c130" isDerived="false" sourceEndRoleName="TheCookieBakery" targetEndRoleName="Factory" isLeaf="false" isAbstract="false">
@@ -64,7 +98,7 @@
           </association>
         </targetEnds>
         <ownedOperationsInternal>
-          <operation Id="a3fb6e35-f10d-4e75-9925-9ca1d3b04ddd" name="MakeCookies" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="a3fb6e35-f10d-4e75-9925-9ca1d3b04ddd" name="MakeCookieOrders" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="f462d05c-970f-47ca-ac68-254ccc9bc5f4" />
           </operation>
           <operation Id="c97ad7ee-4ca7-49e7-a449-42e41076b49f" name="Ready" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
@@ -78,7 +112,7 @@
         <elementDefinition Id="280dc6c8-dd28-4d2f-84d8-4c354efc09ae" />
         <targetEnds>
           <association Id="c75237ba-8e77-4cdb-87ac-ebd376806c86" isDerived="false" sourceEndRoleName="Factory" targetEndRoleName="Person" isLeaf="false" isAbstract="false">
-            <classMoniker Id="74c9adef-40ea-4fb0-863a-a3b71bb223d2" LastKnownName="Person" />
+            <classMoniker Id="74c9adef-40ea-4fb0-863a-a3b71bb223d2" LastKnownName="Customer" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd Id="e8dac397-ddc1-4ff4-852c-296703e79260" name="Factory" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
@@ -105,13 +139,18 @@
           </association>
         </targetEnds>
         <ownedOperationsInternal>
-          <operation Id="afbd49fc-3c97-417c-8491-34cff3edcaea" name="CreatePerson" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="afbd49fc-3c97-417c-8491-34cff3edcaea" name="CreateOrders" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="de5f7105-9070-4184-a4f8-be3b471c92c9" />
           </operation>
           <operation Id="1c198684-9192-4b89-84cc-a1c95efeba4e" name="CreateBakery" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="100a8068-47ec-4b0e-b6c5-99b1b73983a2" />
           </operation>
         </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="5401ad60-7744-4474-b60d-559a32e9bab4" name="Cookie" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="71544ec4-c70b-4ad9-82ed-e1f3ca4784f9" />
       </class>
     </logicalClassDesignerModelHasTypes>
   </packagedElements>

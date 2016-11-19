@@ -47,7 +47,7 @@
     <Compile Include="Client.cs" />
     <Compile Include="Cookie.cs" />
     <Compile Include="Factory.cs" />
-    <Compile Include="Person.cs" />
+    <Compile Include="Customer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
