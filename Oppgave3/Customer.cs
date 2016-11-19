@@ -26,6 +26,7 @@ namespace Oppgave3 {
 
         public  void TakeCookie(Cookie cookie) {
             Console.WriteLine(this.customerName +" has captured "+ cookie.bakery+"'s "+cookie.type);
+            Console.ReadLine();
             }
 
         }
