@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections;
+using System.Threading;
+
 
 
 namespace Oppgave3 {
@@ -26,8 +28,19 @@ namespace Oppgave3 {
             return bakeries;
             }
 
-        public static void SellCookieTo(Customer customer) {
-                
+        public void SellCookieTo(Customer customer) {
+            for (int i = 0; i < Client.cookieOrders.Count(); i += 2) {
+                String temp = "";
+                temp = Client.cookieOrders[i];
+                Console.Write(temp);
+                temp = Client.cookieOrders[i + 1];
+
+                Console.WriteLine(temp);
+                customer.TakeCookie(Factory.CreatCookie("",""));
+                Thread.Sleep(445);
+
+                }
+
             }
         public  void MakeCookieOrders(List<String> list) {
             for (int i=0;i<5;i++) {

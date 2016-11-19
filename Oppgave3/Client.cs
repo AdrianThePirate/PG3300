@@ -12,18 +12,20 @@ using System.Collections;
 
 namespace Oppgave3 {
     class Client {
-        private static List<String> cookieOrders = new List<String>();
-        Cookie yay = Factory.CreatCookie("Barrack o Bakery", "Chococalte Cookie");
+        Bakery bakery = new Bakery("");
+        public static List<String> cookieOrders = new List<String>();
+        Factory f = new Factory();
+        Cookie yay = f.CreatCookie("Barrack o Bakery", "Chococalte Cookie");
+
         Customer fred = Factory.CreateCustomer("Fred");
         Customer greg = Factory.CreateCustomer("Greg");
         Customer ted = Factory.CreateCustomer("Ted");
    
         static void Main(string[] args) {
-            Client c = new Client();
-            c.Test();
-            c.BakeNShit();
 
+            Client client = new Client();
 
+            client.run();
 
 
 
@@ -31,13 +33,25 @@ namespace Oppgave3 {
 
         public Client() {
 
+
+            }
+        public void run() {
+
+            Thread t = new Thread(thread);
             Thread fredd = new Thread(Fred);
             Thread gregg = new Thread(Greg);
             Thread tedg = new Thread(Ted);
 
-            fredd.Start();
+            t.Start();
             gregg.Start();
-                
+            tedg.Start();
+            fredd.Start();
+            Console.ReadLine();
+
+            }
+        public void thread() {
+            orders();
+            SortOrders();
             }
 
         public void orders() {
@@ -61,32 +75,21 @@ namespace Oppgave3 {
             Console.ReadLine();
             }
         public void Fred() {
-            fred.TakeCookie(yay);
+            bakery.SellCookieTo(fred);
+            Thread.Sleep(1000);
             }
         public void Greg() {
-            greg.TakeCookie(yay);
+            bakery.SellCookieTo(greg);
+            Thread.Sleep(667);
 
             }
         public void Ted() {
-            ted.TakeCookie(yay);
+            bakery.SellCookieTo(ted);
+            Thread.Sleep(1300);
 
+            }
 
-            }
-        public void BakeNShit() {
-            orders();
-            //SortOrders();
-            for (int i = 0; i < 4; i++) {
-                String temp = ""; 
-                temp= cookieOrders[i];
-                Console.WriteLine(temp);
-                    
-                Console.ReadLine();
-                }
-            }
-        public void Test() {
-         Customer hitler=  Factory.CreateCustomer("hitler");
-            hitler.TakeCookie(yay);
-            
-            }
         }
+       
 }
+
