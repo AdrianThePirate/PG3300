@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Snake {
+﻿namespace Snake {
 	class Position {
 		//Defin cordinastion
 		public int xCord, yCord;

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Snake {
+﻿namespace Snake {
 	class Action {
 		private Snake snake;
 		private Food food;
@@ -19,6 +14,7 @@ namespace Snake {
 			Left,
 		};
 		private direction dir;
+		private direction lastDir;
 		
 
 		public Action() {
@@ -27,21 +23,22 @@ namespace Snake {
 			gameState = Factory.CreateGameState();
 			window = Factory.CreateGUI();
 			dir = (direction)direction.Down;
+			lastDir = dir;
 			newFood = false;
 			NewFood();
 		}
 
 		public void ChangeDirection(direction newDir) {
-			if(dir == direction.Up) {
+			if(lastDir == direction.Up) {
 				if(newDir != direction.Down) { dir = newDir; }
 			}
-			if(dir == direction.Down) {
+			if(lastDir == direction.Down) {
 				if(newDir != direction.Up) { dir = newDir; }
 			}
-			if(dir == direction.Left) {
+			if(lastDir == direction.Left) {
 				if(newDir != direction.Right) { dir = newDir; }
 			}
-			if(dir == direction.Right) {
+			if(lastDir == direction.Right) {
 				if(newDir != direction.Left) { dir = newDir; }
 			}
 
@@ -65,6 +62,7 @@ namespace Snake {
 				newHead.xCord -= 1;
 				break;
 			}
+			lastDir = dir;
 			//Test if newH is on the food
 			if(newHead.Equals(food.GetLocation())) {
 				NewFood();

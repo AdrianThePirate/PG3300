@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Diagnostics;
 
 // WARNING: DO NOT code like this. Please. EVER! 
@@ -20,7 +18,6 @@ namespace Snake{
 		//Main
 		public static void Main(string[] arguments) {
 			//Set values
-			bool inUse = false;
 			short newDir = 2; // 0 = up, 1 = right, 2 = down, 3 = left
 			short last = newDir;
 			Food food = Factory.CreateFood();
