@@ -15,7 +15,6 @@ using System.Diagnostics;
 namespace Oppgave3 {
 	class Client {
 		public static List<String> cookieOrders = new List<String>();
-		Cookie yay = Factory.CreatCookie("Barrack o Bakery","Chococalte Cookie");
 
 		static Store store;
 

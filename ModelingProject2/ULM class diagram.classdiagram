@@ -122,6 +122,20 @@
             <elementDefinition Id="3c2e381e-a9c8-45ad-ba57-cad9785942e7" />
           </association>
         </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="83829bbc-3c09-44df-8c87-f51938647b5c" name="Object thisLock" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="8ebf646b-5704-4ce7-831a-0c10dadd7db4" />
+          </property>
+          <property Id="022d30b7-5cb4-434e-a4c3-13ff13cde825" name="List&lt;Cookie&gt; sale" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="70f05392-51aa-4635-91b4-500e2804f249" />
+          </property>
+          <property Id="9df02dc3-f5ed-4c0c-bf12-bbcf9c95044c" name="int stockNr" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="d71a8446-e9a4-446f-88a8-0023663c5f57" />
+          </property>
+          <property Id="f05c8de7-bf54-441f-b9bf-c69f82554541" name="Stopwatch stopwatch" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="56350d58-5a5a-48a5-8b45-be08aac2da65" />
+          </property>
+        </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation Id="40bf0448-9a27-4eed-98a8-aa7f7de5cddb" name="AddToStore" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="c9b97864-3640-42eb-8d81-8f07d43b7d52" />
@@ -155,7 +169,37 @@
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="2306748c-804e-486f-9b6c-38846146291e" />
           </association>
+          <association Id="20ddc7e5-c80c-4357-8ec6-f0bba7821369" isDerived="false" sourceEndRoleName="Bakery" targetEndRoleName="Cookie" isLeaf="false" isAbstract="false">
+            <classMoniker Id="5401ad60-7744-4474-b60d-559a32e9bab4" LastKnownName="Cookie" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b233ad60-456f-4c74-894c-168fe87a3293" name="Bakery" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="a800e314-4579-4644-87b0-2ea806cf871b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c670bc3d-1fa5-41f3-8561-23d77db65159" name="Cookie" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="842b247e-812b-4179-a8da-72ff1409f70a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="04776482-ee75-4c60-a04f-5fb351ca30ec" />
+          </association>
         </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="c238d332-9536-44e7-a472-f4b6ec55304f" name="List&lt;String&gt; bakeries" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="1cfe860e-c4a3-43cc-b6c9-742ea66831b9" />
+          </property>
+          <property Id="c2f80c85-32f7-4e5c-84aa-de12d4880f9e" name="Cookie cookie" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="a68f3efa-447b-4ada-a319-54d04268cb79" />
+          </property>
+          <property Id="136bab5b-eeb2-4a2d-8764-78d5ebfa62bb" name="Store store" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="c428f38a-d4dd-4e87-b115-f6680de93000" />
+          </property>
+          <property Id="68f32d26-b18f-4d2e-a07a-868e97f946e6" name="Stopwatch stopwatch" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b4d76565-027a-4bc6-a3df-84b3711bcbf5" />
+          </property>
+        </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation Id="a3fb6e35-f10d-4e75-9925-9ca1d3b04ddd" name="BakeCockie" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="f462d05c-970f-47ca-ac68-254ccc9bc5f4" />
@@ -210,6 +254,11 @@
             <elementDefinition Id="1c14d72b-fd23-41bd-932e-55da03f2e15b" />
           </association>
         </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="bfcba960-a14f-41c1-9f1b-edca4afca145" name="Store store" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="dedefc9b-dea5-46d5-a363-f320d6d7a396" />
+          </property>
+        </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation Id="afbd49fc-3c97-417c-8491-34cff3edcaea" name="CreatCookie" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="de5f7105-9070-4184-a4f8-be3b471c92c9" />
@@ -226,6 +275,11 @@
     <logicalClassDesignerModelHasTypes>
       <class Id="5401ad60-7744-4474-b60d-559a32e9bab4" name="Cookie" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="71544ec4-c70b-4ad9-82ed-e1f3ca4784f9" />
+        <ownedAttributesInternal>
+          <property Id="e31d86d9-4742-4eec-b882-2724152416e8" name="List&lt;String&gt; cookieTypes" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="d6bc0535-8dbe-4be6-8169-9a7c58404f38" />
+          </property>
+        </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation Id="a1038b6b-ec62-488d-b37d-e3e5aea77d6b" name="GetCookieTypes" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="273a3c56-ff46-4a15-83e0-cac84ded1e8b" />

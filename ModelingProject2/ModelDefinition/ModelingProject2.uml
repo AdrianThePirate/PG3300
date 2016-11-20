@@ -282,6 +282,52 @@
             </relationshipOwnedElementsInternal>
           </association>
         </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="8ebf646b-5704-4ce7-831a-0c10dadd7db4"
+            name="Object thisLock"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="70f05392-51aa-4635-91b4-500e2804f249"
+            name="List&lt;Cookie&gt; sale"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="d71a8446-e9a4-446f-88a8-0023663c5f57"
+            name="int stockNr"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="56350d58-5a5a-48a5-8b45-be08aac2da65"
+            name="Stopwatch stopwatch"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
             Id="c9b97864-3640-42eb-8d81-8f07d43b7d52"
@@ -357,7 +403,92 @@
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
+          <association
+            Id="04776482-ee75-4c60-a04f-5fb351ca30ec"
+            isDerived="false"
+            sourceEndRoleName="Bakery"
+            targetEndRoleName="Cookie"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="71544ec4-c70b-4ad9-82ed-e1f3ca4784f9"
+              LastKnownName="Cookie"
+              LastKnownLocation="ModelingProject2.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a800e314-4579-4644-87b0-2ea806cf871b"
+                  name="Bakery"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="842b247e-812b-4179-a8da-72ff1409f70a"
+                  name="Cookie"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
         </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="1cfe860e-c4a3-43cc-b6c9-742ea66831b9"
+            name="List&lt;String&gt; bakeries"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="a68f3efa-447b-4ada-a319-54d04268cb79"
+            name="Cookie cookie"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="c428f38a-d4dd-4e87-b115-f6680de93000"
+            name="Store store"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="b4d76565-027a-4bc6-a3df-84b3711bcbf5"
+            name="Stopwatch stopwatch"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
             Id="f462d05c-970f-47ca-ac68-254ccc9bc5f4"
@@ -557,6 +688,19 @@
             </relationshipOwnedElementsInternal>
           </association>
         </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="dedefc9b-dea5-46d5-a363-f320d6d7a396"
+            name="Store store"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
             Id="de5f7105-9070-4184-a4f8-be3b471c92c9"
@@ -592,6 +736,19 @@
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="d6bc0535-8dbe-4be6-8169-9a7c58404f38"
+            name="List&lt;String&gt; cookieTypes"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
             Id="273a3c56-ff46-4a15-83e0-cac84ded1e8b"
