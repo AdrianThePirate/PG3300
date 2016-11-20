@@ -13,6 +13,7 @@ namespace Oppgave3 {
         static List<String> cookieTypes = new List<String>();
         public String bakery { get; set; }
         public String type { get; set; }
+		public int number { get; set; }
 
          public Cookie(string bakery, String type) {
             this.bakery = bakery;
@@ -22,8 +23,8 @@ namespace Oppgave3 {
   
         public static List<String> GetCookieTypes() {
             if (cookieTypes.Count() == 0) {
-                cookieTypes.Add("Chocolate");
-                cookieTypes.Add("Vanilla");
+                cookieTypes.Add("Chocolate Cookie");
+                cookieTypes.Add("Vanilla Cookie");
                     }
           
             return cookieTypes;

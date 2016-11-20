@@ -5,90 +5,118 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 using System.Collections;
+using System.Diagnostics;
+
 
 
 
 
 
 namespace Oppgave3 {
-    class Client {
-        Bakery bakery = new Bakery("");
-        public static List<String> cookieOrders = new List<String>();
-        Cookie yay = Factory.CreatCookie("Barrack o Bakery", "Chococalte Cookie");
+	class Client {
+		public static List<String> cookieOrders = new List<String>();
+		Cookie yay = Factory.CreatCookie("Barrack o Bakery","Chococalte Cookie");
 
-        Customer fred = Factory.CreateCustomer("Fred");
-        Customer greg = Factory.CreateCustomer("Greg");
-        Customer ted = Factory.CreateCustomer("Ted");
-   
-        static void Main(string[] args) {
+		static Store store;
 
-            Client client = new Client();
+		static void Main(string[] args) {
 
-            client.run();
+			Client client = new Client();
+			client.Run();
 
 
 
-            }
+		}
 
-        public Client() {
+		public Client() {
+			store = Factory.CreateStore();
+
+		}
+		public void Run() {
+
+			store.stopwatch.Start();
+
+			//Thread t = new Thread(thread);
+			Thread fredd = new Thread(Fred);
+			Thread gregg = new Thread(Greg);
+			Thread tedg = new Thread(Ted);
+			var barrack = new Thread(Barrack);
+			var trump = new Thread(Trump);
+			tedg.Start();
+			fredd.Start();
+			gregg.Start();
+			barrack.Start();
+			trump.Start();
+
+			Console.ReadLine();
+
+		}
+		public void thread() {
+
+		}
+
+		public void SortOrders() {
 
 
-            }
-        public void run() {
+			//foreach (String s in cookieOrders) {
+			//  Console.WriteLine(s);
+			//}
+			Console.ReadLine();
+		}
+		public void Fred() {
+			while(true) {
+				if(store.stopwatch.ElapsedMilliseconds >= 450) {
+					if(store.GetStockSize() > 0) {
+						store.SellCookieTo("Fred");
+						Thread.Sleep(100);
+					} else { store.stopwatch.Restart(); }
+				}
+			}
+		}
+		public void Greg() {
+			while(true) {
+				if(store.stopwatch.ElapsedMilliseconds >= 450) {
+					if(store.GetStockSize() > 0) {
+						store.SellCookieTo("Greg");
+						Thread.Sleep(100);
+					} else { store.stopwatch.Restart(); }
 
-            Thread t = new Thread(thread);
-            Thread fredd = new Thread(Fred);
-            Thread gregg = new Thread(Greg);
-            Thread tedg = new Thread(Ted);
+				}
+			}
+		}
+		public void Ted() {
+			while(true) {
+				if(store.stopwatch.ElapsedMilliseconds >= 450) {
+					if(store.GetStockSize() > 0) {
+						store.SellCookieTo("Ted");
+						Thread.Sleep(100);
+					} else { store.stopwatch.Restart(); }
+				}
+			}
+		}
 
-            t.Start();
-            gregg.Start();
-            tedg.Start();
-            fredd.Start();
-            Console.ReadLine();
+		public void Barrack() {
+			Bakery bakery = Factory.CreateBakery("Barrack O bakery", store);
+			bakery.stopwatch.Start();
+			for(int i = 0;i <= 20;) {
+				if(bakery.stopwatch.ElapsedMilliseconds == 1000) {
+					bakery.BakeCockie();
+					i++;
+				}
+			}
+		}
 
-            }
-        public void thread() {
-            orders();
-            SortOrders();
-            }
+		public void Trump() {
+			Bakery bakery = Factory.CreateBakery("Trump Tower Café", store);
+			bakery.stopwatch.Start();
+			for(int i = 0;i <= 11;) {
+				if(bakery.stopwatch.ElapsedMilliseconds == 2500) {
+					bakery.BakeCockie();
+					i++;
+				}
+			}
 
-        public void orders() {
-            
-                for (int j = 0; j < Bakery.GetBakeries().Count(); j++) {
-                cookieOrders.Add(Bakery.GetBakeries()[j] + " ");
-                    }
-                for (int k = 0; k < Cookie.GetCookieTypes().Count(); k++) {
-                cookieOrders.Add(Cookie.GetCookieTypes()[k] + " ");
-                    }
-            Bakery bakery = Factory.CreateBakery("");
-            bakery.MakeCookieOrders(cookieOrders);
-
-            }
-        public void SortOrders() {
-       
-
-            foreach (String s in cookieOrders) {
-                Console.WriteLine(s);
-                }
-            Console.ReadLine();
-            }
-        public void Fred() {
-            bakery.SellCookieTo(fred);
-            Thread.Sleep(1000);
-            }
-        public void Greg() {
-            bakery.SellCookieTo(greg);
-            Thread.Sleep(1000);
-
-            }
-        public void Ted() {
-            bakery.SellCookieTo(ted);
-            Thread.Sleep(1000);
-
-            }
-
-        }
-       
+		}
+	}
 }
 
