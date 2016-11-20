@@ -16,7 +16,7 @@ namespace Oppgave3 {
 			sale = new List<Cookie>();
 			stockNr = 0;
 		}
-
+        //Cookies are put out ready for sale
 		public void AddToStore(Cookie cookie) {
 			lock(thisLock) {
 				cookie.number = stockNr;
@@ -25,11 +25,11 @@ namespace Oppgave3 {
 				++stockNr;
 			}
 		}
-
+        //Returns the amount of cookies currently avaiable for sale
 		public int GetStockSize() {
 			return sale.Count();
 		}
-
+        //Cookies are "sold" to whatever thread gains access first
 		public void SellCookieTo(string customer) {
 			lock(thisLock) {
 				if(sale.Count != 0) {

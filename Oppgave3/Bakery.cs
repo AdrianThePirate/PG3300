@@ -21,7 +21,7 @@ namespace Oppgave3 {
 			stopwatch = new Stopwatch();
 
 		}
-
+        //The cookies put up for sale is generated. Different types will be given based on which bakery has called the method
 		public void BakeCockie() {
 			string type;
 			Random rng = new Random();

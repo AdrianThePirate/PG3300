@@ -32,7 +32,8 @@ namespace Oppgave3 {
 			store = Factory.CreateStore();
 
 		}
-		public void Run() {
+        //Everything is initializied 
+        public void Run() {
 
 			store.stopwatch.Start();
 
