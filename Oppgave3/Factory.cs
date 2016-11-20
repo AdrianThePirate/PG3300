@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Oppgave3 {
     class Factory {
-        //private Cookie cookie;
+        private Cookie cookie;
         public static Bakery CreateBakery(String Name) {
             return new Bakery(Name);
             }

@@ -12,10 +12,7 @@ namespace Oppgave3 {
     class Bakery {
         public String name { get; set; }
         private static List<String> bakeries = new List<String>();
-        private Object thisLock = new Object();
-        private Cookie cookie;
-
-
+       
         public Bakery(string name) {
             this.name = name;
             
@@ -30,22 +27,17 @@ namespace Oppgave3 {
 
             return bakeries;
             }
-        //Factory.CreatCookie(Client.cookieOrders[i], Client.cookieOrders[i + 1])
-        public void SellCookieTo(Customer customer) {
-           lock (thisLock) {
-                
-                for (int i = 0; i < Client.cookieOrders.Count(); i += 2) {
-                    cookie = Factory.CreatCookie("", "");
-                    String temp = "";
-                    temp = Client.cookieOrders[i];
-                    //Console.Write(temp);
-                    temp = Client.cookieOrders[i + 1];
 
-                    //Console.WriteLine(temp);
-                    customer.TakeCookie(cookie);
-                    Thread.Sleep(445);
-                    cookie = null;
-                    }
+        public void SellCookieTo(Customer customer) {
+            for (int i = 0; i < Client.cookieOrders.Count(); i += 2) {
+                String temp = "";
+                temp = Client.cookieOrders[i];
+                Console.Write(temp);
+                temp = Client.cookieOrders[i + 1];
+
+                Console.WriteLine(temp);
+                customer.TakeCookie(Factory.CreatCookie(Client.cookieOrders[i], Client.cookieOrders[i+1]));
+                Thread.Sleep(445);
                 }
             }
         public  void MakeCookieOrders(List<String> list) {
