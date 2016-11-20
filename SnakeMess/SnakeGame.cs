@@ -1,16 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
 
-// WARNING: DO NOT code like this. Please. EVER! 
-//          "Aaaargh!" 
-//          "My eyes bleed!" 
-//          "I facepalmed my facepalm." 
-//          Etc.
-//          I had a lot of fun obfuscating this code though! And I can now (proudly?) say that this is the uggliest short piece of code I've ever worked with! :-)
-//          (And yes, it could have been a lot ugglier! But the idea wasn't to make it fuggly-uggly, just funny-uggly, sweet-uggly, or whatever you want to call it.)
-//
-//          -Tomas
-//
 namespace Snake{
 
 	//Main Class
