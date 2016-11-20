@@ -9,54 +9,36 @@ using System.Diagnostics;
 
 namespace Oppgave3 {
 	class Bakery {
-		public String name { get; set; }
+		public String name { get; private set; }
 		private static List<String> bakeries = new List<String>();
-		private Object thisLock = new Object();
 		private Cookie cookie;
+		private Store store;
 		public Stopwatch stopwatch;
-		int i = 0;
 
-		public Bakery(string name) {
+		public Bakery(string name, Store shop) {
 			this.name = name;
+			store = shop;
 			stopwatch = new Stopwatch();
 
 		}
 
-		//Factory.CreatCookie(Client.cookieOrders[i], Client.cookieOrders[i + 1])
-		public void SellCookieTo(Customer customer) {
-			lock(thisLock) {
-
-				if(i == 0) {
-					cookie = Factory.CreatCookie(i.ToString(),"");
-
-					//Console.WriteLine(temp);
-					customer.TakeCookie(cookie);
-					Thread.Sleep(445);
-					stopwatch.Restart();
-					i++;
-				} else if(i == 2) {
-					i = 0;
-				} else {
-					i++;
-				}
-
-			}
-		}
 		public void BakeCockie() {
 			string type;
 			Random rng = new Random();
 			int typ = rng.Next(0,Cookie.GetCookieTypes().Count()+1);
-			if(typ == Cookie.GetCookieTypes().Count() + 1) {
+			if(typ == Cookie.GetCookieTypes().Count()) {
 				if(name.Equals("Trump Tower Café")) {
 					type = "The greatest cookie";
 				}else {
 					type = "Cookie care";
 				}
 			}else {
-				type = Cookie.GetCookieTypes()[i];
+				type = Cookie.GetCookieTypes()[typ];
 			}
 			cookie = Factory.CreatCookie(name,type);
-			Store.AddToStore(cookie);
+			store.AddToStore(cookie);
+			Thread.Sleep(1250);
+			stopwatch.Restart();
 		}
 	}
 }
