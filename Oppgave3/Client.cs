@@ -52,11 +52,7 @@ namespace Oppgave3 {
 			Console.ReadLine();
 
 		}
-		public void thread() {
-
-		}
-
-		
+			
         //The methods where Fred Greg and Ted tries to to grab the cookie//
         public void Fred() {
 			while(true) {
