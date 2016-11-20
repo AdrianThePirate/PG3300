@@ -41,13 +41,15 @@ namespace Oppgave3 {
         public void run() {
 
             stopwatch = new Stopwatch();
-            stopwatch.Start();
+            bakery.stopwatch.Start();
 
             //Thread t = new Thread(thread);
             Thread fredd = new Thread(Fred);
             Thread gregg = new Thread(Greg);
             Thread tedg = new Thread(Ted);
-            orders();
+			var barack = new Thread(Barrack);
+			var trump = new Thread(Trump);
+            //orders();
             //SortOrders();
             //t.Start();
             tedg.Start();
@@ -82,35 +84,50 @@ namespace Oppgave3 {
             Console.ReadLine();
             }
         public void Fred() {
-            while (true) {
-                if (stopwatch.ElapsedMilliseconds >= 50) {
+			for(int i = 0; i <= 20;) {
+                if (bakery.stopwatch.ElapsedMilliseconds >= 1000) {
                     bakery.SellCookieTo(fred);
-                    Thread.Sleep(1000);
-                    stopwatch.Reset();
-                    break;
+                    Thread.Sleep(100);
+					i++;
                     }
                 }
             }
         public void Greg() {
-            while (true) {
-                if (stopwatch.ElapsedMilliseconds >= 50) {
+			for(int i = 0;i <= 20;) {
+                if (bakery.stopwatch.ElapsedMilliseconds >= 1000) {
                     bakery.SellCookieTo(greg);
-                    Thread.Sleep(1000);
-                    stopwatch.Reset();
-                    break;
-                    }
+                    Thread.Sleep(100);
+					i++;
+					}
                 }
             }
         public void Ted() {
-            while (true) {
-                if (stopwatch.ElapsedMilliseconds >= 50) {
+			for(int i = 0;i <= 20;) {
+                if (bakery.stopwatch.ElapsedMilliseconds >= 1000) {
                     bakery.SellCookieTo(ted);
-                    Thread.Sleep(1000);
-                    stopwatch.Reset();
-                    break;
-                    }
+                    Thread.Sleep(100);
+					i++;
+					}
                 }
             }
+
+		public void Barrack() {
+			Bakery bakery = Factory.CreateBakery("Barrack O bakery");
+			bakery.stopwatch.Start();
+			for(int i = 0; i <= 20;) {
+				if (bakery.stopwatch.ElapsedMilliseconds == 1000) {
+					i++;
+				}
+			}
+		}
+
+		public void Trump() {
+			Bakery bakery = Factory.CreateBakery("Trump Tower Café");
+			bakery.stopwatch.Start();
+			for(int i = 0;i <= 20;) {
+				if(bakery.stopwatch.ElapsedMilliseconds == 1250) {
+					i++;
+				}
 
         }
        
