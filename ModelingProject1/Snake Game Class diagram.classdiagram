@@ -401,6 +401,16 @@
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd Id="095a57fd-0e61-457c-99b2-c677bacff901" name="Possistion" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="75c2cf5b-3c98-41a7-a447-702e73bfa337" name="Lower" value="1">
+                      <elementDefinition Id="ec59cb03-3728-40cf-9d9f-257be52928d2" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="6a8c718a-bf7d-4b26-b4db-f9abee9bcf3d" name="Upper" value=".*">
+                      <elementDefinition Id="a4ba3335-c0d7-4942-86e5-ad3fa87e1c02" />
+                    </literalString>
+                  </upperValueInternal>
                   <elementDefinition Id="6937f84a-2929-4419-819a-c51c8ae9e987" />
                 </memberEnd>
               </associationHasOwnedEnds>
