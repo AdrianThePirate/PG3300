@@ -1,18 +1,23 @@
 ﻿using System;
 
 namespace Snake {
+	/*
+	 * InputHandler cheacks the input, and updated relevent object.
+	 */ 
 	class InputHandler { 
 		
+		//Test input and do needed action.
 		public static void TestInput() {
+			//Aks for needed objects
 			var gameState = Factory.CreateGameState();
 			var action = Factory.CreateAction();
 
+			//gets and test input and makes a desicion based on it.
 			ConsoleKeyInfo cki = Console.ReadKey(true);
 			if(cki.Key == ConsoleKey.Escape)
 				gameState.SetDeath();
 			else if(cki.Key == ConsoleKey.Spacebar)
 				gameState.SetPause();
-			//Directions values 0 = up, 1 = right, 2 = down, 3 = left
 			else if(cki.Key == ConsoleKey.UpArrow)
 				action.ChangeDirection(Action.direction.Up);
 			else if(cki.Key == ConsoleKey.RightArrow)

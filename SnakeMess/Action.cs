@@ -1,5 +1,9 @@
 ﻿namespace Snake {
+	/*
+	 * Action class, keep track on the action in the game, and updateds other objects.
+	 */
 	class Action {
+		//Declears needed objects
 		private Snake snake;
 		private Food food;
 		private GameState gameState;
@@ -7,6 +11,7 @@
 		private bool newFood;
 		private Position head;
 		private Position newHead;
+		//Public enum for easleyer handle diretions.
 		public enum direction {
 			Up,
 			Right,
@@ -16,7 +21,7 @@
 		private direction dir;
 		private direction lastDir;
 		
-
+		//Constructor for Action. Askes for needed objects, and sets defaults.
 		public Action() {
 			snake = Factory.CreateSnake();
 			food = Factory.CreateFood();
@@ -28,6 +33,7 @@
 			NewFood();
 		}
 
+		//Tests new diraction and sets new direction if it's sensabile
 		public void ChangeDirection(direction newDir) {
 			if(lastDir == direction.Up) {
 				if(newDir != direction.Down) { dir = newDir; }
@@ -44,10 +50,12 @@
 
 		}
 
+		//Makes a move with the snake.
 		public void Move() {
 			//Creates objects of point (posistion) basde in snakes posstiosn
 			head = Factory.CreatePosition(location: snake.Last());
 			newHead = Factory.CreatePosition(location: head);
+			//Moveing the snake
 			switch(dir) {
 				case direction.Up:
 				newHead.yCord -= 1;
@@ -63,7 +71,7 @@
 				break;
 			}
 			lastDir = dir;
-			//Test if newH is on the food
+			//Test if newH is on the food, if succsessfull starts process of new food
 			if(newHead.Equals(food.GetLocation())) {
 				NewFood();
 			}
@@ -71,6 +79,7 @@
 			UpdatedGUI();
 		}
 		
+		//priavte, cheacks if the snake has done someting deadly
 		private void DeathCheack(Position newH, bool newFood) {
 			//Cheack if newH is located outside the game area
 			if(newH.yCord < 0 || newH.xCord >= window.boardW) {
@@ -88,6 +97,7 @@
 			}
 		}
 
+		//Creates new food, makes sure it's not on the snake.
 		private void NewFood() {
 			while(true) {
 				food.NewFood(window.boardW,window.boardH);
@@ -99,14 +109,15 @@
 					break;
 				}
 			}
+			//Tests if there are room to place the apple, if not - game over
 			if(snake.Size() + 1 >= window.Size()) {
-				// No more room to place apples - game over.
 				gameState.SetDeath();
 			} else {
 				newFood = true;
 			}
 		}
 
+		//Updateds the GUI, and snake
 		private void UpdatedGUI() {
 			var tail = Factory.CreatePosition(location: snake.First());
 
@@ -120,11 +131,10 @@
 					window.WriteFood(food.GetLocation());
 					newFood = false;
 				}
-				//adds newH to the snake list
+				//adds new head to the snake list
 				snake.Add(newHead);
 				//Prints new head
 				window.WriteMove(head,newHead);
-				//Sets last (controller for last usde direction command) to the newest used direction
 			}
 		}
 	}

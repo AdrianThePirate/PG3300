@@ -3,20 +3,17 @@ using System.Diagnostics;
 
 namespace Snake{
 
-	//Main Class
+	/*
+	 * Snake Game is the main class of the game. It boots up the game and activates action with eatch game tick (100ms).
+	 * 
+	 * It also startes TestInput when needed.
+	 */
 	class SnakeGame{
-		//Main
+		//Main, fist class to start last to close
 		public static void Main(string[] arguments) {
 			//Set values
-			short newDir = 2; // 0 = up, 1 = right, 2 = down, 3 = left
-			short last = newDir;
-			Food food = Factory.CreateFood();
-			GUI GUI = Factory.CreateGUI();
 			GameState gameSate = Factory.CreateGameState();
 			Action action = Factory.CreateAction();
-			//Creats list of point (posistions)
-			Snake snake = Factory.CreateSnake();
-
 
 			//Creates and starts stopwatch
 			Stopwatch time = Factory.CreateStopwatch();
@@ -28,9 +25,9 @@ namespace Snake{
 				if (Console.KeyAvailable) {
 					InputHandler.TestInput();
 				}
-				//Does the action
+				//Test if not pasued
 				if (!gameSate.pause) {
-					// If not passed 100ms return to start of game
+					// If not passed 100ms (1 tick) return to start of game, esle run one action.
 					if (time.ElapsedMilliseconds >= 100) {
 						action.Move();
 						time.Restart();
