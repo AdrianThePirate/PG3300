@@ -55,15 +55,9 @@ namespace Oppgave3 {
 
 		}
 
-		public void SortOrders() {
-
-
-			//foreach (String s in cookieOrders) {
-			//  Console.WriteLine(s);
-			//}
-			Console.ReadLine();
-		}
-		public void Fred() {
+		
+        //The methods where Fred Greg and Ted tries to to grab the cookie//
+        public void Fred() {
 			while(true) {
 				if(store.stopwatch.ElapsedMilliseconds >= 450) {
 					if(store.GetStockSize() > 0) {
@@ -94,8 +88,8 @@ namespace Oppgave3 {
 				}
 			}
 		}
-
-		public void Barrack() {
+        //The methods for for each bakery where they make the cookies
+        public void Barrack() {
 			Bakery bakery = Factory.CreateBakery("Barrack O bakery", store);
 			bakery.stopwatch.Start();
 			for(int i = 0;i <= 20;) {
@@ -109,7 +103,7 @@ namespace Oppgave3 {
 		public void Trump() {
 			Bakery bakery = Factory.CreateBakery("Trump Tower Café", store);
 			bakery.stopwatch.Start();
-			for(int i = 0;i <= 11;) {
+			for(int i = 0;i <= 12;) {
 				if(bakery.stopwatch.ElapsedMilliseconds == 2500) {
 					bakery.BakeCockie();
 					i++;

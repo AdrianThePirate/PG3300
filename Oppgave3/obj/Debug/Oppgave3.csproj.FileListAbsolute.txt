@@ -4,3 +4,9 @@ D:\Git\PG3300\Oppgave3\bin\Debug\Oppgave3.pdb
 D:\Git\PG3300\Oppgave3\obj\Debug\Oppgave3.csprojResolveAssemblyReference.cache
 D:\Git\PG3300\Oppgave3\obj\Debug\Oppgave3.exe
 D:\Git\PG3300\Oppgave3\obj\Debug\Oppgave3.pdb
+E:\C#\PG3300\Oppgave3\bin\Debug\Oppgave3.exe.config
+E:\C#\PG3300\Oppgave3\obj\Debug\Oppgave3.exe
+E:\C#\PG3300\Oppgave3\obj\Debug\Oppgave3.pdb
+E:\C#\PG3300\Oppgave3\bin\Debug\Oppgave3.exe
+E:\C#\PG3300\Oppgave3\bin\Debug\Oppgave3.pdb
+E:\C#\PG3300\Oppgave3\obj\Debug\Oppgave3.csprojResolveAssemblyReference.cache
